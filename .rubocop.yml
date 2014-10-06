@@ -1,0 +1,15 @@
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+AllCops:
+  Include:
+    - Gemfile
+    - lib/tasks/*
+  Exclude:
+    - db/**/*
+    - vendor/**/*
+    - config/**/*
+    - script/**/*
