@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :restaurants
-
   resources :parking_lots
-
+  resources :locations
   devise_for :admins
   resources :attractions
 
