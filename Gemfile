@@ -30,6 +30,7 @@ group :development do
   gem 'guard-rubocop'
   gem 'rubocop'
   gem 'spring'
+  gem 'seed_dump'
 end
 
 group :test do
