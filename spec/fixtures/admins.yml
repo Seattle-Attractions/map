@@ -1,0 +1,3 @@
+admin:
+  email: admin@email.com
+  encrypted_password: <%= Admin.new.send(:password_digest, 'password') %>
