@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.float    "longitude"
     t.string   "hours"
     t.string   "rates"
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,5 +71,4 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.float    "latitude"
     t.float    "longitude"
   end
-
 end
