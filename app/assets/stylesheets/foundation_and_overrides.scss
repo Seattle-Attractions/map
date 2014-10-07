@@ -1318,6 +1318,11 @@ $sub-nav-active-cursor: default;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
-
+#map img {
+  max-width: none;
+}
+#map label {
+  width: auto; display:inline;
+}
 
 @import 'foundation';
