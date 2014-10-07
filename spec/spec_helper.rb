@@ -18,5 +18,19 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    def log_in(admin)
+      visit new_admin_session_path
+      fill_in 'Email', with: admins(admin).email
+      fill_in 'Password', with: 'password'
+      click_on 'Log in'
+    end
+
+    def log_in_incorrectly
+      visit new_admin_session_path
+      fill_in 'Email', with: 'notreal@email.com'
+      fill_in 'Password', with: 'IzHacker'
+      click_on 'Log in'
+    end
   end
 end
