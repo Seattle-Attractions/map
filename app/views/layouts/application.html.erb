@@ -17,6 +17,7 @@
   <div class="row">
     <div class="columns large-10">
       <h1>Map of Seattle Premier Attractions</h1>
+      <h2></h2>
       <div style='width: 800px;'>
         <div id="map" style='width: 800px; height: 400px;'></div>
       </div>
@@ -29,18 +30,7 @@
     <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([
-        {
-          "lat": 47.619982,
-          "lng": -122.349114,
-          "picture": {
-            "url": "http://dl.dropbox.com/s/vdec1gfsy12vawg/1965555_10152084572071977_132984942113953610_o.jpg?dl=0",
-            "width":  100,
-            "height": 60
-          },
-          "infowindow": "Hi! I'm the Space Needle. Check me out!"
-        }
-      ]);
+      markers = handler.addMarkers(<%= raw @attractions_hash.to_json %>, {draggable: false});
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(12);

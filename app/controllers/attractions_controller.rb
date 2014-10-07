@@ -2,6 +2,7 @@ class AttractionsController < ApplicationController
   skip_before_action :authenticate_admin!, only: [:index, :show]
   def index
     @attractions = Attraction.all
+    @attractions_hash = build_json_hash(@attractions)
   end
 
   def new
@@ -41,6 +42,20 @@ class AttractionsController < ApplicationController
   end
 
   private
+
+  def build_json_hash(stuff)
+  Gmaps4rails.build_markers(stuff) do |stuff, marker|
+    marker.lat stuff.latitude
+    marker.lng stuff.longitude
+    marker.json({:id => stuff.id })
+    marker.picture({
+     "url" => "http://dl.dropbox.com/s/hyc9o4m5mrx0iok/map%20marker.jpg?dl=0",
+     "width" =>  32,
+     "height" => 27})
+    marker.infowindow "Hi, I'm the #{stuff.name}. You can find me at
+    #{stuff.address}. Description: #{stuff.description}"
+    end
+  end
 
   def attraction_params
     params.require(:attraction).permit(
