@@ -83,6 +83,8 @@ GEM
     foundation-rails (5.3.1.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    geocoder (1.2.5)
+    gmaps4rails (2.1.2)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -251,6 +253,8 @@ DEPENDENCIES
   eefgilm
   foreman
   foundation-rails
+  geocoder
+  gmaps4rails
   guard-bundler
   guard-livereload
   guard-minitest
