@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_admin!, only: [:index, :show]
   def index
     @attractions = Attraction.all
   end
@@ -42,6 +42,14 @@ class AttractionsController < ApplicationController
 
   private
   def attraction_params
-    params.require(:attraction).permit(:name, :description)
+    params.require(:attraction).permit(
+      :name,
+      :description,
+      :latitude,
+      :longitude,
+      :website,
+      :location,
+      :address
+      )
   end
 end
