@@ -41,6 +41,7 @@ class AttractionsController < ApplicationController
   end
 
   private
+
   def attraction_params
     params.require(:attraction).permit(
       :name,
