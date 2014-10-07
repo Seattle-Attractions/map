@@ -1,9 +1,7 @@
-require "test_helper"
+require 'test_helper'
 
 class ParkingLotsHelperTest < ActionView::TestCase
-
   def test_sanity
-    flunk "Need real tests"
+    flunk 'Need real tests'
   end
-
 end

@@ -48,7 +48,7 @@ class ParkingLotsController < ApplicationController
       :latitude,
       :longitude,
       :hours,
-      :rates,
+      :rates
       )
   end
 end
