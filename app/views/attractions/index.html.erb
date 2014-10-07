@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<h1>Attractions</h1>
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+<table>
+  <tbody>
+    <% @attractions.each do |attraction| %>
+      <tr>
+        <td><%= attraction.name %></td>
+        <td><%= attraction.address %></td>
+        <td><%= attraction.location %></td>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
-</html>
+       <td><%= link_to 'Show', attraction %></td>
+       <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
+       <td><%= link_to 'New', new_attraction_path %></td>
+       <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
