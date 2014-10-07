@@ -6,12 +6,10 @@
       <tr>
         <td><%= attraction.name %></td>
         <td><%= attraction.address %></td>
-        <td><%= attraction.location %></td>
-
-       <td><%= link_to 'Show', attraction %></td>
-       <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-       <td><%= link_to 'New', new_attraction_path %></td>
-       <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', attraction %></td>
+        <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
+        <td><%= link_to 'New', new_attraction_path %></td>
+        <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
