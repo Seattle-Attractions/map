@@ -19,8 +19,8 @@ locations = Location.create!([
 Attraction.create!([
   {name: "Space Needle", address: "400 Broad St, Seattle, WA 98109", latitude: 47.6204, longitude: -122.3491, description: "The Space Needle is a big tower!", website: "http://www.spaceneedle.com", location_id: locations[0].id},
   {name: "Seattle Public Library", address: "1000 4th Ave Seattle, WA 98104", latitude: 47.6066, longitude: -122.332984, description: "Seattle Public Library is a great place to check out books!", website: "http://www.seattlepubliclibrary.com", location_id: locations[2].id},
-  {name: "Underground Tour", address: "608 1st Ave Seattle, WA 98104", latitude: 47.602320, longitude: -122.333602, description: "Toilets, Treachery & Prostitutes", website: "http://www.undergroundtour.com", location: "Downtown Seattle"},
-  {name: "Kenmore Air", address: "950 Westlake Ave N Seattle, WA 98109", latitude: 47.628839, longitude: -122.339740, description: "Fly to the gorgeous San Juans!", website: "http://www.kenmoreair.com", location: "Downtown Seattle"}
+  {name: "Underground Tour", address: "608 1st Ave Seattle, WA 98104", latitude: 47.602320, longitude: -122.333602, description: "Toilets, Treachery & Prostitutes", website: "http://www.undergroundtour.com", location_id: locations[1].id},
+  {name: "Kenmore Air", address: "950 Westlake Ave N Seattle, WA 98109", latitude: 47.628839, longitude: -122.339740, description: "Fly to the gorgeous San Juans!", website: "http://www.kenmoreair.com", location_id: locations[3].id}
 ])
 ParkingLot.create!([
   {name: "Market Place Garage", address: "65 Lenora St Seattle, WA 98101", latitude: 47.611691, longitude: -122.344123, hours: "5am-12am", rates: "$65/hr"},
