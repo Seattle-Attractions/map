@@ -57,9 +57,9 @@ class AttractionsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       marker.json(id: location.id)
-      marker.picture('url' => 'http://dl.dropbox.com/s/mumk8tzf3fze87h/map-marker-14.svg?dl=0',
-                     'width' =>  60,
-                     'height' => 60)
+      marker.picture('url' => ActionController::Base.helpers.asset_path(find_marker(location), type: :image),
+                     'width' =>  30,
+                     'height' => 30)
       marker.infowindow render_to_string(partial: find_partial(location), locals: { location: location })
     end
   end
@@ -69,6 +69,14 @@ class AttractionsController < ApplicationController
     when 'Attraction' then 'attractions/info_window'
     when 'ParkingLot' then 'parking_lots/info_window'
     when 'Restaurant' then 'restaurants/info_window'
+    end
+  end
+
+  def find_marker(location)
+    case location.class.to_s
+    when 'Attraction' then 'attractions.svg'
+    when 'ParkingLot' then 'parking_lots.jpeg'
+    when 'Restaurant' then 'restaurants.png'
     end
   end
 
