@@ -8,7 +8,7 @@ class AttractionsController < ApplicationController
     else
       @attractions = Location.find(params[:location]).attractions
     end
-    @attractions_hash = build_json_hash(@attractions)
+    @markers_hash = build_json_hash(@attractions + ParkingLot.all + Restaurant.all)
     @locations = Location.all
   end
 
@@ -60,7 +60,15 @@ class AttractionsController < ApplicationController
       marker.picture('url' => 'http://dl.dropbox.com/s/mumk8tzf3fze87h/map-marker-14.svg?dl=0',
                      'width' =>  60,
                      'height' => 60)
-      marker.infowindow render_to_string(partial: '/attractions/info_window', locals: { location: location })
+      marker.infowindow render_to_string(partial: find_partial(location), locals: { location: location })
+    end
+  end
+
+  def find_partial(location)
+    case location.class.to_s
+    when 'Attraction' then 'attractions/info_window'
+    when 'ParkingLot' then 'parking_lots/info_window'
+    when 'Restaurant' then 'restaurants/info_window'
     end
   end
 
