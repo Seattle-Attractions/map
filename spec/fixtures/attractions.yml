@@ -7,5 +7,14 @@ museum:
                Brunch occupy church-key kogi flexitarian blog XOXO locavore bicycle rights. Wayfarers postironic chambray
                pork belly biodiesel lofi bicycle rights Portland fixie
                Bushwick Pinterest Godard direct trade tryhard.
-  website: www.example.com
+  website: www.museum.com
   location: downtown
+
+mall:
+  name: Northgate Mall
+  address: '401 NE Northgate Way, Seattle, WA 98125'
+  latitude: 47.707880
+  longitude: -122.326713
+  description: The Northgate Mall is a great place to buy things.
+  website: www.northgatemall.com
+  location: northgate

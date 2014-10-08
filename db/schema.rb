@@ -41,7 +41,13 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.float    "longitude"
     t.text     "description"
     t.string   "website"
-    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "location_id"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

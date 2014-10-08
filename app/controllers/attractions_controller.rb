@@ -1,12 +1,20 @@
 class AttractionsController < ApplicationController
   skip_before_action :authenticate_admin!, only: [:index, :show]
+
   def index
-    @attractions = Attraction.all
+    params[:location] ||= ''
+    if params[:location] == ''
+      @attractions = Attraction.all
+    else
+      @attractions = Location.find(params[:location]).attractions
+    end
     @attractions_hash = build_json_hash(@attractions)
+    @locations = Location.all
   end
 
   def new
     @attraction = Attraction.new
+    @locations = Location.all
   end
 
   def show
@@ -15,6 +23,7 @@ class AttractionsController < ApplicationController
 
   def edit
     @attraction = Attraction.find(params[:id])
+    @locations = Location.all
   end
 
   def create
@@ -62,7 +71,7 @@ class AttractionsController < ApplicationController
       :latitude,
       :longitude,
       :website,
-      :location,
+      :location_id,
       :address
       )
   end

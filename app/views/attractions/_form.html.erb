@@ -36,8 +36,8 @@
     <%= f.url_field :website %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.label :location_id %><br>
+    <%= f.collection_select(:location_id, @locations, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>
