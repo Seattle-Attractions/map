@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
-    @restaurants_hash = build_json_hash(@restaurants)
   end
 
   def new
