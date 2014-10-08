@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141007235438) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +46,12 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.integer  "location_id"
   end
 
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "parking_lots", force: true do |t|
     t.string   "name"
     t.string   "address"
@@ -54,9 +59,6 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.float    "longitude"
     t.string   "hours"
     t.string   "rates"
-
-  create_table "locations", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,4 +74,5 @@ ActiveRecord::Schema.define(version: 20141007235438) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
 end
