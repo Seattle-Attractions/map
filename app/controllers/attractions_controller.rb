@@ -43,16 +43,15 @@ class AttractionsController < ApplicationController
 
   private
 
-  def build_json_hash(stuff)
-    Gmaps4rails.build_markers(stuff) do |stuff, marker|
-      marker.lat stuff.latitude
-      marker.lng stuff.longitude
-      marker.json(id: stuff.id)
-      marker.picture('url' => 'http://dl.dropbox.com/s/hyc9o4m5mrx0iok/map%20marker.jpg?dl=0',
-                     'width' =>  32,
-                     'height' => 27)
-      marker.infowindow "Hi, I'm the #{stuff.name}. You can find me at
-      #{stuff.address}. Description: #{stuff.description}"
+  def build_json_hash(locations)
+    Gmaps4rails.build_markers(locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.json(id: location.id)
+      marker.picture('url' => 'http://dl.dropbox.com/s/mumk8tzf3fze87h/map-marker-14.svg?dl=0',
+                     'width' =>  60,
+                     'height' => 60)
+      marker.infowindow render_to_string(partial: '/attractions/info_window', locals: { location: location })
     end
   end
 
