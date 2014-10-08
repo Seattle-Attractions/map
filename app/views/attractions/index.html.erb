@@ -3,6 +3,11 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
 </script>
 
+<%= form_tag attractions_path, method: 'get' do %>
+  <%= select_tag('location', options_from_collection_for_select(@locations, :id, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
+  <%= submit_tag 'submit', id: 'submit_location' %>
+  <%= javascript_tag "$('#submit_location').hide()" %>
+<% end %>
 
 <div class="row">
   <div class="columns large-10">
