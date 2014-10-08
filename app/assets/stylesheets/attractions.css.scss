@@ -1,33 +1,27 @@
-// Place all the styles related to the attractions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-// Maps defaults
-
-
 #map {
  width: 100%;
- height: 90vh;
 }
 
-#map_space {
-  width: 100%;
+h1 {
+  color: #fff !important;
 }
 
-/* Bootstrap Css Map Fix*/
-#map-container #map-canvas img {
-  max-width: none;
-}
-/* Bootstrap Css Map Fix*/
-#map-container #map-canvas label {
-  width: auto; display:inline;
-}
-
-.sidebar {
+#attraction_sidebar {
   overflow-y: auto;
   height: 90vh;
 }
 
-.header {
-  height: 10vh;
-  width: 100vw;
-}
+.google-maps {
+        position: relative;
+        padding-bottom: 90%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+
+.google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
