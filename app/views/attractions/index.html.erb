@@ -6,12 +6,11 @@
 <div class="row">
   <div class="columns large-10">
     <h1>Map of Seattle Premier Attractions</h1>
-    <h2></h2>
-    <div style='width: 800px;'>
-      <div id="map" style='width: 800px; height: 600px;'></div>
+    <div id="map_space">
+      <div id="map"></div>
     </div>
   </div>
-  <div class="columns large-2">
+  <div class="columns large-2 sidebar">
     <h1>Attractions</h1>
     <%= form_tag attractions_path, method: 'get' do %>
       <%= select_tag('location', options_from_collection_for_select(@locations, :id, :name, params[:location]), include_blank: true, onchange: 'this.form.submit()') %>
