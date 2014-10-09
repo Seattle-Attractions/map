@@ -20,11 +20,15 @@ Attraction.create!([
   {name: "Space Needle", address: "400 Broad St, Seattle, WA 98109",
     latitude: 47.6204, longitude: -122.3491, description: "The Space Needle is a
     big tower!", website: "http://www.spaceneedle.com", location_id:
-    locations[0].id, icon_url: "1.jpg"},
-  {name: "Seattle Public Library", address: "1000 4th Ave Seattle, WA 98104",
-    latitude: 47.6066, longitude: -122.332984, description: "Seattle Public
-    Library is a great place to check out books!", website:
-    "http://www.seattlepubliclibrary.com", location_id: locations[2].id},
+    locations[0].id, icon_url: "1.jpg", coupon_url:
+    "http://www.seattleattractions.com/wp-content/uploads/2013/05/Space-Needle-01.pdf"},
+  {name: "Public Market Tours", address: "1916 Pike Place,
+    Suite 12-379 Seattle, WA 98101",
+    latitude: 47.610945, longitude: -122.342475,
+    description: "1-hour historical tour of Pike Place Market filled with
+    intriguing tales!", website: "http://www.seattlepubliclibrary.com",
+    location_id: locations[2].id, coupon_url:
+    "http://www.seattleattractions.com/wp-content/uploads/2013/05/Public-Market-Tours-01.pdf"},
   {name: "Underground Tour", address: "608 1st Ave Seattle, WA 98104",
     latitude: 47.602320, longitude: -122.333602, description: "Toilets,
     Treachery & Prostitutes", website: "http://www.undergroundtour.com",
