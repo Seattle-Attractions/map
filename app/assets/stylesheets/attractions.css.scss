@@ -5,6 +5,40 @@
 #attraction_sidebar {
   overflow-y: auto;
   height:100vh;
+  background-color: #ffffff;
+}
+
+#attraction_sidebar li {
+  display: inline;
+}
+
+#attraction_sidebar h5 {
+  display: inline;
+}
+
+#attraction_sidebar p {
+  font-size: .9rem;
+  color: #999798;
+}
+
+#attraction_sidebar a {
+  font-size: .9rem;
+  color: #999798;
+}
+
+#attraction_sidebar a:active {
+  font-size: .9rem;
+  color: #999798;
+}
+
+#attraction_sidebar a:hover {
+  font-size: .9rem;
+  color: #5E5E5E;
+}
+
+#attraction_sidebar a:visited {
+  font-size: .9rem;
+  color: #5E5E5E;
 }
 
 .google-maps {
