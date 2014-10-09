@@ -33,3 +33,49 @@ body {
 .left {
   margin-top: 25px;
 }
+
+#map img {
+  max-width: none;
+  float: left;
+}
+
+#map ul {
+  list-style: none outside none;
+  text-align: center;
+  font-size: .8rem;
+}
+
+#map h3 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#map p {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+/*.gm-style-iw {
+   border-radius:4px;
+   max-width:210px;
+   max-height:210px;
+   font-family: 'Open Sans';
+   text-align:center;
+   padding:5px 20px 10px;
+   overflow:hidden;
+   position:absolute;
+}
+.map-info-window .map-info-close{
+   float:right;
+   cursor:pointer;
+   margin-right:-5px;
+   margin-left:5px;
+}
+
+.map-info-window h5{
+   font-weight:bold;
+}
+.map-info-window p{
+   color:#939393;
+}
+*/

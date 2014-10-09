@@ -1,6 +1,7 @@
-<h3><%= location.name %></h3>
+<%= image_tag(location.icon_url, size: "30x45",) %><h3><%= location.name %></h3>
 <ul>
   <li><%= location.address %></li>
   <li><%= link_to "#{location.website}" %></a></li>
-  <li><%= location.description %></li>
+</ul>
+  <p><%= location.description %></p>
 </ul>
