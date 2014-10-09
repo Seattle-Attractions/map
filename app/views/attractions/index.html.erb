@@ -25,22 +25,16 @@
   </div>
   <div id="attraction_sidebar" class="columns small-2">
     <%= form_tag attractions_path, method: 'get' do %>
-      <%= select_tag('location', options_from_collection_for_select(@locations, :id, :name, params[:location]), include_blank: true, onchange: 'this.form.submit()') %>
+      <%= select_tag('location', options_from_collection_for_select(@locations, :id, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
       <%= submit_tag 'submit', id: 'submit_location' %>
       <%= javascript_tag "$('#submit_location').hide()" %>
     <% end %>
 
-    <% @attractions.each_with_index do |attraction, index| %>
-      <div id="attraction_<%= index %>" class="attraction" >
-        <h5><%= attraction.name %></h5>
-        <p><%= attraction.address %></p>
-        <ul>
-          <li><%= link_to 'Show', attraction %></li>
-          <li><%= link_to 'Edit', edit_attraction_path(attraction) %></li>
-          <li><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        </ul>
-      </div>
-    <% end %>
+    <%= render(
+      partial: 'attraction',
+      collection: @attractions) ||
+      "Sorry, we don't have any attractions in this area right now."
+    %>
   </div>
 </div>
 
