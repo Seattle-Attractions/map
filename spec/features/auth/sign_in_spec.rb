@@ -12,4 +12,14 @@ feature 'signing in as admin' do
 
     page.text.must_include 'Invalid email address or password'
   end
+
+  scenario 'admin links are only visible to signed-in admins' do
+    visit attractions_path
+
+    page.text.wont_include 'Admin Resources'
+
+    log_in(:admin)
+
+    page.text.must_include 'Admin Resources'
+  end
 end

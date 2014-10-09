@@ -21,7 +21,6 @@ body {
 }
 
 .top-bar {
-  overflow: hidden !important;
   height: 100px !important;
   line-height: 100px !important;
   position: relative !important;
