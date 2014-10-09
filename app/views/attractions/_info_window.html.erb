@@ -1,7 +1,12 @@
-<%= image_tag(location.icon_url, size: "30x45",) %><h3><%= location.name %></h3>
-<ul>
-  <li><%= location.address %></li>
-  <li><%= link_to "#{location.website}" %></a></li>
-</ul>
+<div class="infowindow">
+  <%= image_tag(location.icon_url, size: "30x45",) %><h3><%= location.name %></h3>
+  <ul>
+    <li><%= location.address %></li>
+    <li><%= link_to("#{location.website}", location.website) %></a></li>
+  </ul>
   <p><%= location.description %></p>
-</ul>
+  <% if location.coupon_url != nil %>
+    <%= button_to "Print Coupon", location.coupon_url, :class => "gmaps-iw-button",
+     :method => :get %>
+  <% end %>
+</div>

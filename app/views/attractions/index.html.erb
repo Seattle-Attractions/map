@@ -39,15 +39,15 @@
 </div>
 
 <script type="text/javascript">
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  var markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
-  bindAttrMarkerPairs(handler, markers);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  handler.getMap().setZoom(13);
-  handler.getMap().setCenter({lat: 47.618615, lng: -122.338470})
-});
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    var markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
+    bindAttrMarkerPairs(handler, markers);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(13);
+    handler.getMap().setCenter({lat: 47.618615, lng: -122.338470})
+  });
 </script>
 
  <div class="columns large-12" style="background-color: #ffffff">
