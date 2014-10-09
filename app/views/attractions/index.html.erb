@@ -29,26 +29,30 @@
       <%= submit_tag 'submit', id: 'submit_location' %>
       <%= javascript_tag "$('#submit_location').hide()" %>
     <% end %>
-  <table>
-    <tbody>
-      <% @attractions.each do |attraction| %>
-        <tr>
-          <td><%= attraction.name %></td>
-          <td><%= attraction.address %></td>
-          <td><%= link_to 'Show', attraction %></td>
-          <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-          <td><%= link_to 'New', new_attraction_path %></td>
-          <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+    <% i = 0 %>
+    <% @attractions.each do |attraction| %>
+      <div id= <%= "attraction_#{i}" %> >
+        <% i += 1 %>
+        <h3><%= attraction.name %></h3>
+        <p><%= attraction.address %></p>
+        <ul>
+          <li><%= link_to 'Show', attraction %></li>
+          <li><%= link_to 'Edit', edit_attraction_path(attraction) %></li>
+          <li><%= link_to 'New', new_attraction_path %></li>
+          <li><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <script type="text/javascript">
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%= raw @markers_hash.to_json %>, {draggable: false});
+  var markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
+  // var attrCount = <%= @attractions.size %>;
+  // bindAttrMarkerPairs();
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
   handler.getMap().setZoom(13);

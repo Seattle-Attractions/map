@@ -19,3 +19,19 @@
 //= require gmaps/google
 
 $(function(){ $(document).foundation(); });
+
+function initClickBind($attr, marker) {
+  $attr.on('click', function() {
+    handler.getMap().setZoom(14);;
+    marker.setMap(handler.setMap());
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  });
+};
+
+function bindAttrMarkerPairs() {
+  for (i = 0; i < attrCount; i++) {
+    var $attr = $.find('div#attraction_' + i);
+    initClickBind($attr, markers[i]);
+  };
+};
