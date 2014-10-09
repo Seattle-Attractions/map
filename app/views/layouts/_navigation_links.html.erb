@@ -1,1 +1,15 @@
-<li><%= link_to 'Sign Out', admin_session_path</li>
+<li class="has-dropdown">
+  <a href="#">Admin Resources</a>
+  <ul class="dropdown">
+    <li><%= link_to 'Attractions', attractions_path %></li>
+    <li><%= link_to 'Parking Lots', parking_lots_path %></li>
+    <li><%= link_to 'Restaurants', restaurants_path %></li>
+    <li><%= link_to 'Locations', locations_path %></li>
+    <li><%= link_to 'Sign Out',
+      destroy_admin_session_path,
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+    </li>
+  </ul>
+</li>
+
