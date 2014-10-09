@@ -8,7 +8,7 @@ feature 'geocoding' do
     click_on 'Create Attraction'
     page.text.must_include 'Attraction saved'
     visit attractions_path
-    page.find('tr', text: '19 W Thomas').click_on('Show')
+    page.find('div.attraction', text: '19 W Thomas').click_on('Show')
     page.text.must_include '47.6209264'
   end
 end

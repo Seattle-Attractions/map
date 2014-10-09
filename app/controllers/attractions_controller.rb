@@ -8,7 +8,8 @@ class AttractionsController < ApplicationController
     else
       @attractions = Location.find(params[:location]).attractions
     end
-    @markers_hash = build_json_hash(@attractions + ParkingLot.all + Restaurant.all)
+    @markers_hash =
+      build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
     @locations = Location.all
   end
 
