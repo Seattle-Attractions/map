@@ -31,7 +31,13 @@ body {
 }
 
 .left {
-  margin-top: 25px;
+  margin-top: 60px;
+  color: #ffffff !important;
+}
+
+.left h1 {
+  color: #ffffff !important;
+  font-size: 25px !important;
 }
 
 #map img {
