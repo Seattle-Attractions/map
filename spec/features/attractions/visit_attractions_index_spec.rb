@@ -15,4 +15,12 @@ feature 'A visitor should see attractions with expected functionality' do
     page.text.must_include attractions(:mall).name
   end
 
+  scenario 'a visitor can bring up an info window by clicking on an attraction', js: true do
+    visit attractions_path
+    page.text.wont_include attractions(:museum).description
+    find('div.attraction', text: attractions(:museum).name).click
+    page.text.must_include attractions(:museum).description
+
+  end
+
 end

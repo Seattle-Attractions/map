@@ -20,18 +20,19 @@
 
 $(function(){ $(document).foundation(); });
 
-function initClickBind($attr, marker) {
+function initClickBind(handler, $attr, marker) {
   $attr.on('click', function() {
     handler.getMap().setZoom(14);;
-    marker.setMap(handler.setMap());
+    console.log(marker);
+    marker.setMap(handler.getMap());
     marker.panTo();
     google.maps.event.trigger(marker.getServiceObject(), 'click');
   });
 };
 
-function bindAttrMarkerPairs() {
-  for (i = 0; i < attrCount; i++) {
-    var $attr = $.find('div#attraction_' + i);
-    initClickBind($attr, markers[i]);
+function bindAttrMarkerPairs(handler, markers) {
+  for (i = 0; i < $('.attraction').length; i++) {
+    var $attr = $('div#attraction_' + i);
+    initClickBind(handler, $attr, markers[i]);
   };
 };
