@@ -23,7 +23,6 @@ $(function(){ $(document).foundation(); });
 function initClickBind(handler, $attr, marker) {
   $attr.on('click', function() {
     handler.getMap().setZoom(14);;
-    console.log(marker);
     marker.setMap(handler.getMap());
     marker.panTo();
     google.maps.event.trigger(marker.getServiceObject(), 'click');

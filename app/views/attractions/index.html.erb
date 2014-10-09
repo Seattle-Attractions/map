@@ -30,16 +30,13 @@
       <%= javascript_tag "$('#submit_location').hide()" %>
     <% end %>
 
-    <% i = 0 %>
-    <% @attractions.each do |attraction| %>
-      <div id="attraction_<%= i %>" class="attraction" >
-        <% i += 1 %>
-        <h3><%= attraction.name %></h3>
+    <% @attractions.each_with_index do |attraction, index| %>
+      <div id="attraction_<%= index %>" class="attraction" >
+        <h5><%= attraction.name %></h5>
         <p><%= attraction.address %></p>
         <ul>
           <li><%= link_to 'Show', attraction %></li>
           <li><%= link_to 'Edit', edit_attraction_path(attraction) %></li>
-          <li><%= link_to 'New', new_attraction_path %></li>
           <li><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
