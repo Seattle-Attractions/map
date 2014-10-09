@@ -11,6 +11,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'minitest-rails'
 gem 'minitest-reporters'
 gem 'pg'
@@ -30,8 +31,8 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rubocop'
   gem 'rubocop'
-  gem 'spring'
   gem 'seed_dump'
+  gem 'spring'
 end
 
 group :test do
