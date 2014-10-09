@@ -16,3 +16,20 @@
 
  */
 /*= require foundation */
+body {
+  background-color: #000 !important;
+}
+
+.top-bar {
+  overflow: hidden !important;
+  height: 100px !important;
+  line-height: 100px !important;
+  position: relative !important;
+  background: #000000 !important;
+  margin-bottom: 0 !important;
+  margin-left: 10px !important;
+}
+
+.left {
+  margin-top: 25px;
+}
