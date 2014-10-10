@@ -49,6 +49,7 @@ class RestaurantsController < ApplicationController
       :latitude,
       :longitude,
       :website,
+      :phone,
       :price
       )
   end
