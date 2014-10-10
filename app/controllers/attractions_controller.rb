@@ -11,12 +11,12 @@ class AttractionsController < ApplicationController
   def show
     @fields = [
       :name,
+      :address,
+      :location_id,
       :description,
       :latitude,
       :longitude,
       :website,
-      :location_id,
-      :address,
       :icon_url,
       :coupon_url
     ]
