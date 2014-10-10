@@ -10,11 +10,11 @@ Admin.create!([
 ])
 
 locations = Location.create!([
-  {name: "Downtown Seattle", latitude: 47.612440, longitude: -122.325726},
-  {name: "Northgate", latitude: 47.708865, longitude: -122.322807},
-  {name: "Mercer Island", latitude: 47.570415, longitude: -122.221184},
-  {name: "Kirkland", latitude: 47.683099, longitude: -122.179298},
-  {name: "Beijing", latitude: 39.904030, longitude: 116.407526}
+  {name: "Seattle", latitude: 47.602320, longitude: -122.333602, zoom: 13},
+  {name: "Island", latitude: 48.403505, longitude: -123.198362, zoom: 9},
+  {name: "South", latitude: 47.383263, longitude: -122.317543, zoom: 9},
+  {name: "North", latitude: 47.921564, longitude: -122.290170, zoom: 13},
+  {name: "Beijing", latitude: 39.904030, longitude: 116.407526, zoom: 11}
 ])
 
 Attraction.create!([

@@ -7,6 +7,6 @@
   <p><%= location.description %></p>
   <% if location.coupon_url != nil %>
     <%= button_to "Print Coupon", location.coupon_url, :class => "gmaps-iw-button",
-    :target => "_blank", :method => :get %>
+    form: {:target => "_blank"}, :method => :get %>
   <% end %>
 </div>
