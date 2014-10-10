@@ -1,6 +1,7 @@
-Seattle Attractions Map
+# Seattle Attractions Map
 ===
 
+## Description
 Interactive map of Seattle's Premier Attractions (http://www.seattleattractions.com/) that can be viewed at:
 http://seattle-attractions-map.herokuapp.com/
 
@@ -15,3 +16,9 @@ The map includes:
 Relevent Gems:
 * Google Maps for Rails
 * Geocoder
+
+## Authors
+
+* Deirdre Allison (https://github.com/DeirdreAllison)
+* Derek Maffett (https://github.com/DerekMaffett)
+* Pete Mitchell (https://github.com/petemmitchell)
