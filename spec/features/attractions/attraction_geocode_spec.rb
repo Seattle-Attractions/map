@@ -4,11 +4,12 @@ feature 'geocoding' do
   scenario 'map should auto populate latitude and longitude' do
     log_in(:admin)
     visit new_attraction_path
+    fill_in 'Name', with: 'New Attraction'
     fill_in 'Address', with: '19 W Thomas St Seattle, WA'
     click_on 'Create Attraction'
     page.text.must_include 'Attraction saved'
-    visit root_path
-    page.find('div.attraction', text: '19 W Thomas').click_on('Show')
+    visit attractions_path
+    page.find('tr', text: 'New Attraction').click_on('Show')
     page.text.must_include '47.6209264'
   end
 end
