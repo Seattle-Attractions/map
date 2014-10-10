@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @fields = [:name, :address, :latitude, :longitude, :price, :phone, :website]
     @restaurant = Restaurant.find(params[:id])
   end
 
