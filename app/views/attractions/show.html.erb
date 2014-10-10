@@ -1,15 +1,13 @@
-<p>
-  <strong>Name:</strong>
-  <%= @attraction.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @attraction.description %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @attraction.latitude %>
-</p>
-
+<% @fields.each do |field| %>
+  <% if field == :location_id %>
+    <p>
+      <strong>Location:</strong>
+      <%= @attraction.location.name %>
+    </p>
+  <% else %>
+    <p>
+      <strong><%= field.to_s.capitalize %>:</strong>
+      <%= @attraction.public_send(field) %>
+    </p>
+  <% end %>
+<% end %>

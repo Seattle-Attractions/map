@@ -9,6 +9,17 @@ class AttractionsController < ApplicationController
   end
 
   def show
+    @fields = [
+      :name,
+      :description,
+      :latitude,
+      :longitude,
+      :website,
+      :location_id,
+      :address,
+      :icon_url,
+      :coupon_url
+    ]
     @attraction = Attraction.find(params[:id])
   end
 
@@ -51,7 +62,8 @@ class AttractionsController < ApplicationController
       :longitude,
       :website,
       :location_id,
-      :address
-      )
+      :address,
+      :icon_url,
+      :coupon_url)
   end
 end
