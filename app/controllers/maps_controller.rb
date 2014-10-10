@@ -9,7 +9,7 @@ class MapsController < ApplicationController
       @attractions = Attraction.alphabetize
     else
       location = Location.find(params[:location])
-      @map_center = { lat: location.latitude , lng: location.longitude }
+      @map_center = { lat: location.latitude, lng: location.longitude }
       @attractions = location.attractions.alphabetize
     end
     @markers_hash =

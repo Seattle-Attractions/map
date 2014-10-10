@@ -4,6 +4,9 @@ Documentation:
 Metrics/LineLength:
   Max: 120
 
+MethodLength:
+  Max: 15
+
 AllCops:
   Include:
     - Gemfile
