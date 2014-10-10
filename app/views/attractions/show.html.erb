@@ -1,15 +1,6 @@
-<p>
-  <strong>Name:</strong>
-  <%= @attraction.name %>
-</p>
+<%= render(
+  partial: 'layouts/global_show',
+  locals: { fields: @fields, record: @attraction }) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @attraction.description %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @attraction.latitude %>
-</p>
-
+<%= link_to 'Edit', edit_attraction_path(@attraction) %> |
+<%= link_to 'Back', attractions_path %>

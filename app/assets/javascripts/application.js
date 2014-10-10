@@ -21,6 +21,10 @@ function initClickBind(handler, $attr, marker) {
     marker.panTo();
     google.maps.event.trigger(marker.getServiceObject(), 'click');
   });
+  // marker.on('click', function() {
+  //   $attr.parent().scrollTo($attr);
+  //   $attr.click();
+  // });
 };
 
 function bindAttrMarkerPairs(handler, markers) {

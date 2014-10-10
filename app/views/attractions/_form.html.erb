@@ -20,6 +20,10 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
     <%= f.label :latitude %><br>
     <%= f.text_field :latitude %>
   </div>
@@ -28,16 +32,20 @@
     <%= f.text_field :longitude %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
     <%= f.label :website %><br>
     <%= f.url_field :website %>
   </div>
   <div class="field">
     <%= f.label :location_id %><br>
     <%= f.collection_select(:location_id, @locations, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :icon_url %><br>
+    <%= f.text_area :icon_url %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_url %><br>
+    <%= f.text_area :coupon_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

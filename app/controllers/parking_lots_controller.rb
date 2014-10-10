@@ -8,6 +8,14 @@ class ParkingLotsController < ApplicationController
   end
 
   def show
+    @fields = [
+      :name,
+      :address,
+      :latitude,
+      :longitude,
+      :hours,
+      :rates
+    ]
     @parking_lot = ParkingLot.find(params[:id])
   end
 
