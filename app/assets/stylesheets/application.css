@@ -36,6 +36,10 @@ h1 {
   margin-left: 0px !important;
 }
 
+#attraction_sidebar {
+  padding-left: 5px !important;
+}
+
 .top-bar {
   height: 100px !important;
   line-height: 100px !important;
@@ -65,10 +69,12 @@ h1 {
   text-align: center;
   font-size: .8rem;
   padding: 0px 0px 0px;
+  margin-bottom: .5rem;
+  position: relative;
 }
 
 #map h3 {
-  font-size: 1rem;
+  font-size: .9rem;
   text-align: center;
 }
 
@@ -76,17 +82,16 @@ h1 {
   font-size: .85rem;
   font-weight: lighter;
   padding: 0px 0px 0px;
+  line-height: 1.0rem;
+  margin-bottom: .75rem;
 }
 
 .gm-style-iw {
-   border-radius:4px;
-   max-width:210px;
-   max-height:210px;
    font-family: 'Open Sans';
    text-align:center;
    padding:5px 0px 10px;
-   overflow:auto;
-   position:absolute;
+   overflow: auto;
+   position: relative;
 }
 .map-info-window .map-info-close{
    float:right;
