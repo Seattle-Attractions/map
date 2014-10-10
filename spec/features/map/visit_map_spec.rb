@@ -7,6 +7,11 @@ feature 'visiting the map page' do
     page.text.must_include attractions(:mall).name
   end
 
+  scenario 'a visitor should see attractions in alphabetical order' do
+    visit root_path
+    page.first('div.attraction').text.must_include attractions(:museum).name
+  end
+
   scenario 'a visitor can filter attractions by location', js: true do
     visit root_path
 
