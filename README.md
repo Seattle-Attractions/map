@@ -1,5 +1,4 @@
 # Seattle Attractions Map
-===
 
 ## Description
 Interactive map of Seattle's Premier Attractions (http://www.seattleattractions.com/) that can be viewed at:
