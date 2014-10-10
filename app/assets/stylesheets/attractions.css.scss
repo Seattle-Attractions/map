@@ -41,6 +41,14 @@
   color: #5E5E5E;
 }
 
+.selected {
+  background-color: #CFD7E8;
+}
+
+.selected h5 {
+  font-weight: bold;
+}
+
 .google-maps {
         position: relative;
         padding-bottom: 90%; // This is the aspect ratio

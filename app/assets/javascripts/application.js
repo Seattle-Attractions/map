@@ -14,6 +14,8 @@ $(function(){ $(document).foundation(); });
 
 function initClickBind(handler, $attr, marker) {
   $attr.on('click', function() {
+    $('div.attraction').removeClass('selected');
+    $attr.addClass('selected');
     handler.getMap().setZoom(14);;
     marker.setMap(handler.getMap());
     marker.panTo();
