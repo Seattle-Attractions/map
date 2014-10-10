@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @fields = [:name, :latitude, :longitude]
+    @fields = [:name, :latitude, :longitude, :zoom]
     @location = Location.find(params[:id])
   end
 
