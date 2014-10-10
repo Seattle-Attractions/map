@@ -5,11 +5,15 @@ class MapsController < ApplicationController
     params[:location] ||= ''
     if params[:location] == ''
       @attractions = Attraction.alphabetize
-      @map_center = { lat: 47.618615, lng: -122.338470 }
+      @map_center = { lat: 47.618615, lng: -122.338470, zoom: 13 }
       @attractions = Attraction.alphabetize
     else
       location = Location.find_by(name: params[:location])
-      @map_center = { lat: location.latitude, lng: location.longitude }
+      @map_center = {
+        lat: location.latitude,
+        lng: location.longitude,
+        zoom: location.zoom
+      }
       @attractions = location.attractions.alphabetize
     end
     @markers_hash =

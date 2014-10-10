@@ -5,7 +5,7 @@ Metrics/LineLength:
   Max: 120
 
 MethodLength:
-  Max: 15
+  Max: 20
 
 AllCops:
   Include:
