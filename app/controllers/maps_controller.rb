@@ -4,9 +4,9 @@ class MapsController < ApplicationController
   def map
     params[:location] ||= ''
     if params[:location] == ''
-      @attractions = Attraction.all
+      @attractions = Attraction.alphabetize
     else
-      @attractions = Location.find(params[:location]).attractions
+      @attractions = Location.find(params[:location]).attractions.alphabetize
     end
     @markers_hash =
       build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
