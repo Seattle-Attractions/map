@@ -1,6 +1,12 @@
 northgate:
   name: Northgate
+  latitude: 47.708865
+  longitude: -122.322807
 downtown:
   name: Downtown Seattle
+  latitude: 47.612440
+  longitude: -122.325726
 mercer:
   name: Mercer Island
+  latitude: 47.570415
+  longitude: -122.221184

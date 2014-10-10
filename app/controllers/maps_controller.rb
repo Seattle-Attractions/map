@@ -5,8 +5,12 @@ class MapsController < ApplicationController
     params[:location] ||= ''
     if params[:location] == ''
       @attractions = Attraction.alphabetize
+      @map_center = { lat: 47.618615, lng: -122.338470 }
+      @attractions = Attraction.alphabetize
     else
-      @attractions = Location.find(params[:location]).attractions.alphabetize
+      location = Location.find(params[:location])
+      @map_center = { lat: location.latitude, lng: location.longitude }
+      @attractions = location.attractions.alphabetize
     end
     @markers_hash =
       build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
