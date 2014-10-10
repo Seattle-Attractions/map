@@ -32,7 +32,10 @@
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
     handler.getMap().setZoom(13);
-    handler.getMap().setCenter({lat: 47.618615, lng: -122.338470})
+    handler.getMap().setCenter({
+      lat: <%= @map_center[:lat] %> ,
+      lng: <%= @map_center[:lng] %>
+    })
   });
 </script>
 
