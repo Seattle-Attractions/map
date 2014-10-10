@@ -14,7 +14,7 @@ feature 'signing in as admin' do
   end
 
   scenario 'admin links are only visible to signed-in admins' do
-    visit attractions_path
+    visit root_path
 
     page.text.wont_include 'Admin Resources'
 
