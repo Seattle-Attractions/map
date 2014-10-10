@@ -75,9 +75,9 @@ class AttractionsController < ApplicationController
 
   def find_marker(location)
     case location.class.to_s
-    when 'Attraction' then 'attractions.svg'
-    when 'ParkingLot' then 'parking_lots.jpeg'
-    when 'Restaurant' then 'restaurants.png'
+    when 'Attraction' then 'attractionmarker.png'
+    when 'ParkingLot' then 'parkingmarker.png'
+    when 'Restaurant' then 'restaurantmarker.png'
     end
   end
 
