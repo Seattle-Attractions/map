@@ -7,7 +7,7 @@ feature 'geocoding' do
     fill_in 'Address', with: '19 W Thomas St Seattle, WA'
     click_on 'Create Attraction'
     page.text.must_include 'Attraction saved'
-    visit map_path
+    visit root_path
     page.find('div.attraction', text: '19 W Thomas').click_on('Show')
     page.text.must_include '47.6209264'
   end
