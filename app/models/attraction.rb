@@ -4,8 +4,6 @@ class Attraction < ActiveRecord::Base
   # auto-fetch coordinates and the condition is for preventing fetching the same address more than once
   after_validation :geocode, if: :address_changed?
 
-  private
-
   def self.alphabetize
     order(name: :asc)
   end
