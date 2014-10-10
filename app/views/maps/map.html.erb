@@ -31,7 +31,7 @@
     bindAttrMarkerPairs(handler, markers);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(13);
+    handler.getMap().setZoom(<%= @map_center[:zoom] %>);
     handler.getMap().setCenter({
       lat: <%= @map_center[:lat] %> ,
       lng: <%= @map_center[:lng] %>
