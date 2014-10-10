@@ -1,0 +1,14 @@
+<% fields.each do |field| %>
+  <% if field.to_s.chars.last(3).join == '_id' %>
+    <% base_name = field.to_s.chomp('_id') %>
+    <p>
+      <strong><%= base_name.capitalize %>:</strong>
+      <%= record.public_send(base_name).name %>
+    </p>
+  <% else %>
+    <p>
+      <strong><%= field.to_s.capitalize %>:</strong>
+      <%= record.public_send(field) %>
+    </p>
+  <% end %>
+<% end %>

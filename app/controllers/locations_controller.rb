@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @fields = [:name, :latitude, :longitude]
     @location = Location.find(params[:id])
   end
 
@@ -42,12 +43,7 @@ class LocationsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_location
-  end
-
-  # Only allow a trusted parameter "white list" through.
   def location_params
-    params.require(:location).permit(:name)
+    params.require(:location).permit(:name, :latitude, :longitude)
   end
 end
