@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010012321) do
+ActiveRecord::Schema.define(version: 20141010031522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20141010012321) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  add_index "locations", ["name"], name: "index_locations_on_name", using: :btree
 
   create_table "parking_lots", force: true do |t|
     t.string   "name"

@@ -1,16 +1,4 @@
 <div id="attraction_<%= attraction_counter %>" class="attraction" >
   <h5><%= attraction.name %></h5>
   <p><%= attraction.address %></p>
-  <% if admin_signed_in? %>
-    <ul>
-      <li><%= link_to 'Show', attraction %></li>
-      <li><%= link_to 'Edit', edit_attraction_path(attraction) %></li>
-      <li><%= link_to(
-        'Destroy',
-        attraction,
-        method: :delete,
-        data: { confirm: 'Are you sure?' }) %>
-      </li>
-    </ul>
-  <% end %>
 </div>

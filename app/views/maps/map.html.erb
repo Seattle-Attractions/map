@@ -10,7 +10,7 @@
   </div>
   <div class="columns small-2 no-pad-left">
     <%= form_tag root_path, method: 'get' do %>
-      <%= select_tag('location', options_from_collection_for_select(@locations, :id, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
+      <%= select_tag('location', options_from_collection_for_select(@locations, :name, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
       <%= submit_tag 'submit', id: 'submit_location' %>
       <%= javascript_tag "$('#submit_location').hide()" %>
     <% end %>
