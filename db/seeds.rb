@@ -10,9 +10,9 @@ Admin.create!([
 ])
 
 locations = Location.create!([
-  {name: "Seattle", latitude: 47.629809, longitude: -122.329372, zoom: 13},
-  {name: "Island", latitude: 48.403505, longitude: -123.198362, zoom: 12},
-  {name: "South", latitude: 48.403505, longitude: -123.198362, zoom: 11},
+  {name: "Seattle", latitude: 47.602320, longitude: -122.333602, zoom: 13},
+  {name: "Island", latitude: 48.403505, longitude: -123.198362, zoom: 9},
+  {name: "South", latitude: 47.383263, longitude: -122.317543, zoom: 9},
   {name: "North", latitude: 47.921564, longitude: -122.290170, zoom: 13},
   {name: "Beijing", latitude: 39.904030, longitude: 116.407526, zoom: 11}
 ])
