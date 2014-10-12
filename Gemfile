@@ -20,7 +20,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'underscore-rails'
-
+gem 'simplecov', :require => false, group: :test
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
