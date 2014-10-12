@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     put 'admins' => 'devise/registrations#update', as: 'admin_registration'
   end
   resources :attractions
+  get 'about' => 'static_pages#about', as: 'about'
 
   root 'maps#map'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
