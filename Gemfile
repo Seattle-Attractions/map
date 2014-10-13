@@ -3,6 +3,7 @@ ruby '2.1.2'
 
 gem 'rails', '4.1.6'
 
+gem 'aws-sdk'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'eefgilm'
