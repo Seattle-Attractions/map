@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'minitest-rails'
 gem 'minitest-reporters'
+gem 'paperclip', '~> 4.2'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
