@@ -62,7 +62,7 @@ class AttractionsController < ApplicationController
     respond_to do |format|
       if @attraction.update(attraction_params)
         format.html { redirect_to @attraction, notice: 'Article updated' }
-        format.js { flash.now[:notice] = 'Article updated'}
+        format.js { flash.now[:notice] = 'Article updated' }
       else
         format.html { render :edit }
         format.js
@@ -80,7 +80,6 @@ class AttractionsController < ApplicationController
       format.js { flash.now[:notice] = 'Attraction destroyed' }
     end
   end
-
 
   private
 
