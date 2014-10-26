@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'underscore-rails'
 gem 'simplecov', :require => false, group: :test
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -33,6 +34,7 @@ group :development do
   gem 'rubocop'
   gem 'seed_dump'
   gem 'spring'
+  gem 'libnotify'
 end
 
 group :test do

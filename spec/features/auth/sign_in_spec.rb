@@ -22,4 +22,10 @@ feature 'signing in as admin' do
 
     page.text.must_include 'Admin Resources'
   end
+
+  scenario 'a visitor can not access the index page for attractions' do
+    visit attraction_path(attractions(:museum))
+
+    page.text.must_include 'You need to sign in or sign up before continuing'
+  end
 end

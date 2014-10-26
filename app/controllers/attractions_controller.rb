@@ -3,11 +3,6 @@ class AttractionsController < ApplicationController
     @attractions = Attraction.all
   end
 
-  def new
-    @attraction = Attraction.new
-    @locations = Location.all
-  end
-
   def show
     @fields = [
       :name,
@@ -21,36 +16,70 @@ class AttractionsController < ApplicationController
       :coupon_url
     ]
     @attraction = Attraction.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def new
+    @attraction = Attraction.new
+    @locations = Location.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def create
+    @attraction = Attraction.new(attraction_params)
+    respond_to do |format|
+      if @attraction.save
+        format.html { redirect_to @attraction, notice: 'Attraction saved' }
+        format.js { flash.now[:notice] = 'Attraction saved' }
+      else
+        format.html { render :new }
+        format.js
+      end
+    end
   end
 
   def edit
     @attraction = Attraction.find(params[:id])
     @locations = Location.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
-  def create
-    @attraction = Attraction.new(attraction_params)
-    if @attraction.save
-      redirect_to @attraction, notice: 'Attraction saved'
-    else
-      render :new
+  def update
+    @attraction = Attraction.find(params[:id])
+    respond_to do |format|
+      if @attraction.update(attraction_params)
+        format.html { redirect_to @attraction, notice: 'Article updated' }
+        format.js { flash.now[:notice] = 'Article updated'}
+      else
+        format.html { render :edit }
+        format.js
+      end
     end
   end
 
   def destroy
     @attraction = Attraction.find(params[:id])
     @attraction.destroy
-    redirect_to attractions_path, notice: 'Attraction destroyed'
-  end
-
-  def update
-    @attraction = Attraction.find(params[:id])
-    if @attraction.update(attraction_params)
-      redirect_to @attraction, notice: 'Article updated'
-    else
-      render :edit
+    respond_to do |format|
+      format.html do
+        redirect_to attractions_path, notice: 'Attraction destroyed'
+      end
+      format.js { flash.now[:notice] = 'Attraction destroyed' }
     end
   end
+
 
   private
 
