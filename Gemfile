@@ -36,6 +36,7 @@ group :development do
   gem 'rubocop'
   gem 'seed_dump'
   gem 'spring'
+  gem 'libnotify'
 end
 
 group :test do

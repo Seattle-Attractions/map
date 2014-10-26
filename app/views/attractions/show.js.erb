@@ -1,0 +1,7 @@
+$("td:contains('Show')").show();
+$('#<%= dom_id(@attraction) %>').find("td:contains('Show')").hide();
+$('#sidebar').empty().append(
+  "<%= j render(
+  partial: 'layouts/global_show',
+  locals: { fields: @fields, record: @attraction }) %>"
+);

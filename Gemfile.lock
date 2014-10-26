@@ -136,6 +136,8 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (2.8.4)
+    libnotify (0.8.3)
+      ffi (>= 1.0.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -306,6 +308,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   launchy
+  libnotify
   minitest-rails
   minitest-rails-capybara
   minitest-reporters
