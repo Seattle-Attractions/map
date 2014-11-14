@@ -17,7 +17,6 @@ class AttractionsController < ApplicationController
       :latitude,
       :longitude,
       :website,
-      :icon_url,
       :coupon_url
     ]
     @attraction = Attraction.find(params[:id])
@@ -63,7 +62,7 @@ class AttractionsController < ApplicationController
       :website,
       :location_id,
       :address,
-      :icon_url,
+      :icon,
       :coupon_url)
   end
 end
