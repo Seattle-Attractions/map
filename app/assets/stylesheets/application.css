@@ -97,22 +97,25 @@ hr {
 
 .gm-style-iw {
    font-family: 'Open Sans';
-   text-align:center;
-   padding:5px 0px 10px;
+   text-align: center;
+   padding: 5px 0px 10px;
    overflow: auto;
    position: relative;
 }
 .map-info-window .map-info-close{
    float:right;
    cursor:pointer;
-   margin-right:-5px;
-   margin-left:5px;
+   margin-right: -5px;
+   margin-left: 5px;
 }
 
 .map-info-window h5{
-   font-weight:bold;
+   font-weight: bold;
 }
 .map-info-window p{
-   color:#939393;
+   color: #939393;
 }
 
+.map-footer {
+  background-color: #ffffff
+}
