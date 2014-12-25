@@ -5,6 +5,7 @@ class ParkingLotsController < ApplicationController
 
   def new
     @parking_lot = ParkingLot.new
+    respond_to { |format| format.js }
   end
 
   def show
@@ -17,6 +18,7 @@ class ParkingLotsController < ApplicationController
       :rates
     ]
     @parking_lot = ParkingLot.find(params[:id])
+    respond_to { |format| format.js }
   end
 
   def edit
@@ -26,25 +28,23 @@ class ParkingLotsController < ApplicationController
   def create
     @parking_lot = ParkingLot.new(parking_lot_params)
     if @parking_lot.save
-      redirect_to @parking_lot, notice: 'Parking location saved'
-    else
-      render :new
+      flash.now[:notice] = 'Parking lot saved'
     end
+    respond_to { |format| format.js }
   end
 
   def destroy
     @parking_lot = ParkingLot.find(params[:id])
     @parking_lot.destroy
-    redirect_to parking_lots_path, notice: 'Parking location destroyed'
+    respond_to { |format| format.js }
   end
 
   def update
     @parking_lot = ParkingLot.find(params[:id])
     if @parking_lot.update(parking_lot_params)
-      redirect_to @parking_lot, notice: 'Article updated'
-    else
-      render :edit
+      flash.now[:notice] = 'Parking lot saved'
     end
+    respond_to { |format| format.js }
   end
 
   private

@@ -20,7 +20,7 @@ feature 'authorization' do
     page.must_have_field 'Name'
   end
 
-  scenario 'submitting creates a new attraction' do
+  scenario 'submitting creates a new attraction', :js do
     page.click_on 'New Attraction'
     fill_in 'Name', with: 'Super Cool Place'
     click_on 'Create Attraction'
