@@ -1,8 +1,9 @@
 <div class="infowindow">
-  <%= image_tag(location.icon.url(:map_icon)) %><h3><%= location.name %></h3>
+  <%= image_tag(location.icon.url(:map_icon)) %>
+  <h3><%= location.name %></h3>
   <ul>
     <li><%= location.address %></li>
-    <li><%= link_to("#{location.website}", location.website, :target => "_blank") %></a></li>
+    <li><%= link_to("Website", location.website, :target => "_blank") %></a></li>
   </ul>
   <p><%= location.description %></p>
   <% if location.coupon_url != nil %>
