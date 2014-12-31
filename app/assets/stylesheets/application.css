@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require foundation
  */
-/*= require foundation */
+
 body {
   font-family: 'Open Sans', sans-serif !important;
   padding-left: 0rem !important;
@@ -97,7 +97,7 @@ hr {
 
 .gm-style-iw {
    font-family: 'Open Sans';
-   text-align:center;
+   text-align:right;
    padding:5px 0px 10px;
    overflow: auto;
    position: relative;
