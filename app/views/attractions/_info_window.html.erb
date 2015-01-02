@@ -4,6 +4,7 @@
   <ul>
     <li><%= location.address %></li>
     <li><%= link_to("Website", location.website, :target => "_blank") %></a></li>
+    <li><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{location.latitude},#{location.longitude}", :target => "_blank") %></li>
   </ul>
   <p><%= location.description %></p>
   <% if location.coupon_url != nil %>
