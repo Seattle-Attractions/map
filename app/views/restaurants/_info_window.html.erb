@@ -2,8 +2,9 @@
   <h3><%= location.name %></h3>
   <ul>
     <li><%= location.address %></li>
-    <li><%= location.phone %></li>
-    <li><%= link_to "#{location.website}" %></li>
+    <li><%= number_to_phone(location.phone, area_code: true) %></li>
+    <li><%= link_to("Website", location.website, :target => "_blank") %></a></li>
+    <li><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{location.latitude},#{location.longitude}", :target => "_blank") %></li>
     <li><%= location.price %></li>
   </ul>
 </div>
