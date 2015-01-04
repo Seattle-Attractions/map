@@ -1,0 +1,32 @@
+@import "foundation_and_overrides";
+@import "attractions";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation
+ */
+
+
+#attraction_sidebar p {
+  padding-left: .5em;
+}
+
+#attraction_sidebar h5 {
+  padding-left: .5em;
+}
+
+.top-bar {
+  height: 100px;
+}
+

@@ -1,13 +1,13 @@
 <div class="infowindow">
   <%= image_tag(location.icon.url(:map_icon)) %>
   <h3><%= location.name %></h3>
-  <ul>
+  <ul class="no-bullet">
     <li><%= location.address %></li>
     <li><%= link_to("Website", location.website, :target => "_blank") %></a></li>
   </ul>
   <p><%= location.description %></p>
   <% if location.coupon_url != nil %>
-    <%= button_to "Print Coupon", location.coupon_url, :class => "gmaps-iw-button",
+    <%= button_to "Print Coupon", location.coupon_url, :class => "button radius",
     form: {:target => "_blank"}, :method => :get %>
   <% end %>
 </div>
