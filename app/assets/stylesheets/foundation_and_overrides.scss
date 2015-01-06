@@ -81,13 +81,13 @@ $include-html-global-classes: $include-html-classes;
 
 // $row-width: rem-calc(1000);
 // $total-columns: 12;
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(0);
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -103,29 +103,29 @@ $include-html-global-classes: $include-html-classes;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
+$steel       : #666666;
+$charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
+$black       : #000000;
 
 // We use these to control various global styles
 // $body-bg: $white;
-// $body-font-color: $jet;
+$body-font-color: $steel;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -198,18 +198,18 @@ $include-html-global-classes: $include-html-classes;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
-// $header-line-height: 1.4;
+$header-font-color: $oil;
+$header-line-height: 1.6;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
+$h1-font-size: rem-calc(25);
 // $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
+$h3-font-size: rem-calc(20);
 // $h4-font-size: rem-calc(23);
-// $h5-font-size: rem-calc(18);
+$h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
@@ -234,7 +234,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
+$paragraph-font-size: .9rem;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
@@ -259,10 +259,10 @@ $include-html-global-classes: $include-html-classes;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+$hr-border-width: 1.5px;
 // $hr-border-style: solid;
-// $hr-border-color: $gainsboro;
-// $hr-margin: rem-calc(20);
+$hr-border-color: $oil;
+$hr-margin: rem-calc(10);
 
 // We use these to style lists
 // $list-font-family: $paragraph-font-family;
@@ -290,8 +290,8 @@ $include-html-global-classes: $include-html-classes;
 // $acronym-underline: 1px dotted $gainsboro;
 
 // We use these to control padding and margin
-// $microformat-padding: rem-calc(10 12);
-// $microformat-margin: rem-calc(0 0 20 0);
+$microformat-padding: rem-calc(10);
+$microformat-margin: rem-calc(10);
 
 // We use these to control the border styles
 // $microformat-border-width: 1px;
@@ -432,7 +432,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: $white;
+$button-font-color: $oil;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -447,7 +447,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: #fdb52f;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1361,7 +1361,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
+$topbar-bg-color: $black;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

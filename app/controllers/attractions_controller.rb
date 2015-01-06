@@ -18,6 +18,7 @@ class AttractionsController < ApplicationController
       :latitude,
       :longitude,
       :website,
+      :icon,
       :coupon_url
     ]
     @attraction = Attraction.find(params[:id])
