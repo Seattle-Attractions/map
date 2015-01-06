@@ -3,24 +3,32 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
 </script>
 
-  <div class="columns large-10">
+  <div class="columns large-9 hide-for-small-only">
     <div>
       <div id="map" class="google-maps"></div>
     </div>
   </div>
-  <div class="columns small-2 no-pad-left">
+  <div class="columns small-3 no-pad-left hide-for-small-only">
     <%= form_tag root_path, method: 'get' do %>
       <%= select_tag('location', options_from_collection_for_select(@locations, :name, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
       <%= submit_tag 'submit', id: 'submit_location' %>
       <%= javascript_tag "$('#submit_location').hide()" %>
     <% end %>
   </div>
-  <div id="attraction_sidebar" class="columns small-2">
+  <div id="attraction_sidebar" class="columns small-3 hide-for-small-only">
     <%= render(
       partial: 'attraction',
       collection: @attractions,
       spacer_template: "attraction_divider") ||
       "Sorry, we don't have any attractions in this area right now." %>
+  </div>
+  <div id="small_home" class="show-for-small-only small-6">
+  <h3><%= link_to 'All', attractions_path %></h3>
+  <h3>Nearby</h3>
+  <h3>Map</h3>
+  <h3>Downtown Seattle</h3>
+  <h3>North Seattle</h3>
+  <h3>South Seattle</h3>
   </div>
 </div>
 

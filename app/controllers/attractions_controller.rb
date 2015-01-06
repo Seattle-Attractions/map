@@ -12,6 +12,7 @@ class AttractionsController < ApplicationController
     @fields = [
       :name,
       :address,
+      :phone,
       :location_id,
       :description,
       :latitude,
@@ -63,6 +64,7 @@ class AttractionsController < ApplicationController
       :location_id,
       :address,
       :icon,
+      :phone,
       :coupon_url)
   end
 end

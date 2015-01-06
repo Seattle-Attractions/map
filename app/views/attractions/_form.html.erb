@@ -20,6 +20,10 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
+  </div>
+  <div class="field">
     <%= f.label :location_id %><br>
     <%= f.collection_select(:location_id, @locations, :id, :name) %>
   </div>
