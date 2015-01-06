@@ -68,12 +68,12 @@ hr {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-.map img {
+#map img {
   max-width: none;
   float: left;
 }
 
-.map ul {
+#map ul {
   list-style: none outside none;
   text-align: center;
   font-size: .8rem;
@@ -82,12 +82,12 @@ hr {
   position: relative;
 }
 
-.map h3 {
+#map h3 {
   font-size: .9rem;
   text-align: center;
 }
 
-.map p {
+#map p {
   font-size: .85rem;
   font-weight: lighter;
   padding: 0px 0px 0px;
