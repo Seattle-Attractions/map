@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
-  before_action :detect_browser
+  before_action :detect_device
 
   def index
     @attractions = Attraction.all
@@ -14,6 +14,7 @@ class AttractionsController < ApplicationController
     @device = 'others'
     respond_to do |format|
       format.html.phone do
+        @attraction = Attraction.find(params[:id])
       end
 
       format.html.desktop do
@@ -79,7 +80,7 @@ class AttractionsController < ApplicationController
       :coupon_url)
   end
 
-  def detect_browser
+  def detect_device
     case request.user_agent
       when /iPhone/i
         request.variant = :phone
