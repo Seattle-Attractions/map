@@ -18,7 +18,9 @@
         lat: <%= @attraction.latitude %>,
         lng: <%= @attraction.longitude %>,
         picture: {
-          url: "attractionmarkersm.png"
+          url: '<%= asset_path('attractionmarkersm.png') %>',
+          width: 30,
+          height: 30
         },
         infowindow: "hello!"
       }
