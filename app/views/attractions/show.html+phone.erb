@@ -6,27 +6,20 @@
 <div id="mobile_show_map" style="width:75%; height:50%; padding:10px"></div>
 
 <script type="text/javascript">
-  $(function() {
-  handler = Gmaps.build('Google');
-  handler.buildMap({
-    internal: {
-      id: 'mobile_show_map'}
-    },
-    function(){
-    markers = handler.addMarkers([
-      {
-        lat: <%= @attraction.latitude %>,
-        lng: <%= @attraction.longitude %>,
-        picture: {
-          url: '<%= asset_path('attractionmarkersm.png') %>',
-          width: 30,
-          height: 30
-        },
-        infowindow: "hello!"
-      }
-    ]);
-  });
-  });
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'mobile_show_map'}},
+      function(){
+        var markers = handler.addMarkers([
+          {"lat": <%= @attraction.latitude %>,
+           "lng": <%= @attraction.longitude %>,
+           "picture":
+           {"url": '<%= asset_path('attractionmarkersm.png') %>',
+            "width": 30,
+            "height": 30}
+          }]);
+        handler.map.centerOn(markers[0]);
+        handler.getMap().setZoom(14);
+      });
 </script>
 
 <h3>
