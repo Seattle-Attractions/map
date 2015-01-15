@@ -1,4 +1,4 @@
-<%= form_for(@attraction, remote: true, html: { multipart: true }) do |f| %>
+<%= form_for @attraction, remote: true, html: { multipart: true } do |f| %>
   <% if @attraction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@attraction.errors.count, "error") %> prohibited this article from being saved:</h2>
