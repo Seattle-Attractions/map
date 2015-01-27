@@ -31,10 +31,25 @@
 }
 
 select {
-    background-color: #fdb52f;
-    border: 1px solid #333333;
-    font-weight: bold;
-    overflow: hidden;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  background-color: #fdb52f;
+  border: 1px solid #333333;
+  font-weight: bold;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
+
+.small-home {
+  background-color: #333333;
+  padding: 10px 0px;
+}
+
+.small-home a {
+  background-color: #333333;
+  padding: 10px;
+}
+
+.small-home hr {
+  border-top: 2px solid #ffffff;
+}
+

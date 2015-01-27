@@ -1,15 +1,17 @@
 <div class="infowindow">
-  <%= image_tag(location.icon.url(:map_icon)) %>
   <h3><%= location.name %></h3>
+  <%= image_tag(location.icon.url(:map_icon)) %>
   <ul class="no-bullet">
     <li><%= location.address %></li>
     <li><%= number_to_phone(location.phone, area_code: true) %></li>
     <li><%= link_to("Website", location.website, :target => "_blank") %></a></li>
     <li><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{location.latitude},#{location.longitude}", :target => "_blank") %></li>
   </ul>
-  <p><%= location.description %></p>
+  <p class="text-left"><%= location.description %>
   <% if location.coupon_url != nil %>
-    <%= button_to "Print Coupon", location.coupon_url, :class => "button radius",
+    <%= button_to "Print Coupon", location.coupon_url, :class => "button radius button right",
     form: {:target => "_blank"}, :method => :get %>
   <% end %>
+  </p>
+
 </div>

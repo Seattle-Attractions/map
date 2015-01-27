@@ -6,14 +6,18 @@
       </h1>
     </li>
   </ul>
-  <h1 style="color: #ffffff">Map of Seattle's Premier Attractions</h1>
 
+  <section class="top-bar-section hide-for-small-only">
+
+    <ul class="left">
+      <li><%= link_to "Map", root_path %></li>
+      <li><a href="http://www.seattleattractions.com/">Seattle Attractions Website</a></li>
+    </ul>
 
   <% if admin_signed_in? %>
-    <section class="top-bar-section">
       <ul class="right">
         <%= render 'layouts/navigation_links' %>
       </ul>
-    </section>
+  </section>
   <% end %>
 </nav>
