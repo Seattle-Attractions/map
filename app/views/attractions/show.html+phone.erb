@@ -3,7 +3,16 @@
 <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
 </script>
-<div id="mobile_show_map" style="width:75%; height:50%; padding:10px"></div>
+
+<div id="mobile-show">
+<h1><%= @attraction.name %></h1>
+<p><%= @attraction.address %> (<%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>)</p>
+<p><%= @attraction.phone %></p>
+<p><%= link_to("Website", @attraction.website, :target => "_blank") %></p>
+<p><%= @attraction.description %></p>
+</div>
+
+<div id="mobile_show_map" style="width:90%; height:50%; padding:1em; margin: 0 auto;"></div>
 
 <script type="text/javascript">
       handler = Gmaps.build('Google');
@@ -15,29 +24,14 @@
            "picture":
            {"url": '<%= asset_path('attractionmarkersm.png') %>',
             "width": 30,
-            "height": 30}
-          }]);
+            "height": 30},
+           "infowindow": '<%= @attraction.name %> <%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>'
+          }
+        ]);
         handler.map.centerOn(markers[0]);
         handler.getMap().setZoom(14);
       });
 </script>
 
-<h3>
-  <%= @attraction.name %>
-</h3>
-<p>
-  <%= @attraction.address %>
-</p>
-<p>
-  <%= @attraction.phone %>
-</p>
-<p>
-  <%= link_to("Website", @attraction.website, :target => "_blank") %>
-</p>
-<p>
-  <%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>
-</p>
-<p>
-  <%= @attraction.description %>
-</p>
+
 
