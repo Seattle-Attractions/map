@@ -21,6 +21,13 @@ class MapsController < ApplicationController
     @locations = Location.all
   end
 
+  def nearby_mobile
+    @attractions = Attraction.alphabetize
+    @markers_hash =
+      build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
+    @locations = Location.all
+  end
+
   private
 
   def build_json_hash(locations)

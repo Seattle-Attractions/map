@@ -1,0 +1,6 @@
+<ul class="small-home no-bullet">
+  <% @attractions.each do |attraction| %>
+    <li><%= link_to attraction.name, attraction %></li>
+    <hr>
+  <% end %>
+</ul>

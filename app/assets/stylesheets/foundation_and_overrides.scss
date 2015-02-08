@@ -96,7 +96,7 @@ $font-family-sans-serif: "Open Sans", Helvetica, Roboto, Arial, sans-serif;
 // $font-weight-bold: bold !default;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #fdb52f;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -236,7 +236,7 @@ $h5-font-size: rem-calc(18);
 // $paragraph-font-weight: $font-weight-normal;
 $paragraph-font-size: .9rem;
 // $paragraph-line-height: 1.6;
-// $paragraph-margin-bottom: rem-calc(20);
+$paragraph-margin-bottom: rem-calc(3);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
 // $paragraph-aside-font-style: italic;
@@ -612,7 +612,7 @@ $button-bg-color: #fdb52f;
 // $include-html-form-classes: $include-html-classes;
 
 // We use this to set the base for lots of form spacing and positioning styles
-// $form-spacing: rem-calc(16);
+$form-spacing: rem-calc(16);
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
@@ -621,7 +621,7 @@ $button-bg-color: #fdb52f;
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color($black, $lightness: 30%);
 // $form-label-small-transform: capitalize;
-// $form-label-bottom-margin: 0;
+$form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
@@ -675,7 +675,7 @@ $button-bg-color: #fdb52f;
 // $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
-// $select-bg-color: $ghost;
+$select-bg-color: #fdb52f;
 // $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 // 12. Icon Bar
@@ -1373,7 +1373,7 @@ $topbar-bg-color: $black;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: $black;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
@@ -1387,10 +1387,10 @@ $topbar-bg-color: $black;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(18);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-color-hover: $charcoal;
+$topbar-link-bg-color-hover: $black;
 // $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

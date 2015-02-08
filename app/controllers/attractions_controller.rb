@@ -1,4 +1,6 @@
 class AttractionsController < ApplicationController
+  before_action :detect_device
+
   def index
     @attractions = Attraction.all
   end
@@ -9,19 +11,28 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @fields = [
-      :name,
-      :address,
-      :phone,
-      :location_id,
-      :description,
-      :latitude,
-      :longitude,
-      :website,
-      :icon,
-      :coupon_url
-    ]
-    @attraction = Attraction.find(params[:id])
+    @device = 'others'
+    respond_to do |format|
+      format.html.phone do
+        @attraction = Attraction.find(params[:id])
+      end
+
+      format.html.desktop do
+        @fields = [
+          :name,
+          :address,
+          :phone,
+          :location_id,
+          :description,
+          :latitude,
+          :longitude,
+          :website,
+          :icon,
+          :coupon_url
+        ]
+        @attraction = Attraction.find(params[:id])
+      end
+    end
   end
 
   def edit
@@ -68,4 +79,18 @@ class AttractionsController < ApplicationController
       :phone,
       :coupon_url)
   end
+
+  def detect_device
+    case request.user_agent
+      when /iPhone/i
+        request.variant = :phone
+      when /Android/i && /mobile/i
+        request.variant = :phone
+      when /Windows Phone/i
+        request.variant = :phone
+      else
+        request.variant = :desktop
+    end
+  end
+
 end

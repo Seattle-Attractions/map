@@ -1,0 +1,8 @@
+<div class="mobile-infowindow">
+  <h3><%= @attraction.name %></h3>
+  <ul class="no-bullet">
+    <li><%= @attraction.address %></li>
+    <li><%= number_to_phone(@attraction.phone, area_code: true) %></li>
+    <li><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %></li>
+  </ul>
+</div>

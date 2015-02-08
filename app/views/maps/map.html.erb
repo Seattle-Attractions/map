@@ -3,7 +3,7 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
 </script>
 
-  <div class="columns large-9 hide-for-small-only">
+  <div class="columns large-10 hide-for-small-only">
     <div>
       <div id="map" class="google-maps"></div>
     </div>
@@ -21,14 +21,13 @@
       spacer_template: "attraction_divider") ||
       "Sorry, we don't have any attractions in this area right now." %>
   </div>
-  <div id="small_home" class="show-for-small-only small-6">
-  <h3><%= link_to 'All', attractions_path %></h3>
-  <h3>Nearby</h3>
-  <h3>Map</h3>
-  <h3>Downtown Seattle</h3>
-  <h3>North Seattle</h3>
-  <h3>South Seattle</h3>
+
+  <div class="show-for-small-only small-12 small-home">
+    <%= link_to 'All Attractions', attractions_path %>
+    <hr>
+    <%= link_to 'Nearby Attractions', nearby_path %>
   </div>
+
 </div>
 
 <script type="text/javascript">
@@ -47,7 +46,5 @@
 </script>
 
  <div class="columns large-12" style="background-color: #ffffff">
-  <h1>Map of Seattle's Premier Attractions</h1>
-  <h5><%= link_to 'About This App', about_path %></h5>
-  <p>Use this map to find all the must visit places in the greater Seattle Area. Each location features contact information and a link to a coupon you can print out for the attraction.</p>
+  <h5><a href="http://www.seattleattractions.com/"> < Back to Seattle Attractions Website</a></h5>
 </div>
