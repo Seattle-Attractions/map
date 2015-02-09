@@ -1,5 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :detect_device
+  skip_before_action :authenticate_admin!
 
   def index
     @attractions = Attraction.all
@@ -82,14 +83,14 @@ class AttractionsController < ApplicationController
 
   def detect_device
     case request.user_agent
-      when /iPhone/i
-        request.variant = :phone
-      when /Android/i && /mobile/i
-        request.variant = :phone
-      when /Windows Phone/i
-        request.variant = :phone
-      else
-        request.variant = :desktop
+    when /iPhone/i
+      request.variant = :phone
+    when /Android/i && /mobile/i
+      request.variant = :phone
+    when /Windows Phone/i
+      request.variant = :phone
+    else
+      request.variant = :desktop
     end
   end
 
