@@ -3,13 +3,13 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
 </script>
 
-  <div class="columns large-10 hide-for-small-only">
+  <div class="columns large-10 show-for-medium-up">
     <div>
       <div id="map" class="google-maps"></div>
     </div>
   </div>
 
-  <div id="attraction_sidebar" class="columns large-2 hide-for-small-only">
+  <div id="attraction_sidebar" class="columns large-2 show-for-medium-up">
     <%= form_tag root_path, method: 'get' do %>
       <%= select_tag('location', options_from_collection_for_select(@locations, :name, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
       <%= submit_tag 'submit', id: 'submit_location' %>
