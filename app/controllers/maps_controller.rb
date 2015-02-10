@@ -1,34 +1,58 @@
 class MapsController < ApplicationController
+  before_action :detect_device
   skip_before_action :authenticate_admin!
 
   def map
-    params[:location] ||= ''
-    if params[:location] == ''
-      @attractions = Attraction.alphabetize
-      @map_center = { lat: 47.618615, lng: -122.338470, zoom: 13 }
-      @attractions = Attraction.alphabetize
-    else
-      location = Location.find_by(name: params[:location])
-      @map_center = {
-        lat: location.latitude,
-        lng: location.longitude,
-        zoom: location.zoom
-      }
-      @attractions = location.attractions.alphabetize
+    @device = 'others'
+    respond_to do |format|
+      format.html.desktop do
+        params[:location] ||= ''
+        if params[:location] == ''
+          @attractions = Attraction.alphabetize
+          @map_center = { lat: 47.618615, lng: -122.338470, zoom: 13 }
+          @attractions = Attraction.alphabetize
+        else
+          location = Location.find_by(name: params[:location])
+          @map_center = {
+            lat: location.latitude,
+            lng: location.longitude,
+            zoom: location.zoom
+          }
+          @attractions = location.attractions.alphabetize
+        end
+        @markers_hash =
+          build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
+        @locations = Location.all
+      end
     end
-    @markers_hash =
-      build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
-    @locations = Location.all
   end
 
   def nearby_mobile
-    @attractions = Attraction.alphabetize
-    @markers_hash =
-      build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
-    @locations = Location.all
+    @device = 'others'
+    respond_to do |format|
+      format.html.desktop do
+        @attractions = Attraction.alphabetize
+        @markers_hash =
+          build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
+        @locations = Location.all
+      end
+    end
   end
 
   private
+
+  def detect_device
+    case request.user_agent
+    when /iPhone/i
+      request.variant = :phone
+    when /Android/i && /mobile/i
+      request.variant = :phone
+    when /Windows Phone/i
+      request.variant = :phone
+    else
+      request.variant = :desktop
+    end
+  end
 
   def build_json_hash(locations)
     Gmaps4rails.build_markers(locations) do |location, marker|
