@@ -24,6 +24,7 @@ class MapsController < ApplicationController
           build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all
       end
+      format.html.mobile
     end
   end
 
@@ -31,11 +32,11 @@ class MapsController < ApplicationController
     @device = 'others'
     respond_to do |format|
       format.html.mobile do
-        @attractions = Attraction.alphabetize
         @markers_hash =
-          build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
+          build_json_hash(Attraction.all + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all
       end
+      format.html.desktop
     end
   end
 
