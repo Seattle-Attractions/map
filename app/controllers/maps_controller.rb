@@ -30,7 +30,7 @@ class MapsController < ApplicationController
   def nearby_mobile
     @device = 'others'
     respond_to do |format|
-      format.html.desktop do
+      format.html.mobile do
         @attractions = Attraction.alphabetize
         @markers_hash =
           build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
