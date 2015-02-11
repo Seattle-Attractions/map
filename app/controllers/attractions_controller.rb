@@ -1,6 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :detect_device
-  skip_before_action :authenticate_admin!
+  skip_before_action :authenticate_admin!, only: [:show]
 
   def index
     @attractions = Attraction.all
@@ -19,6 +19,7 @@ class AttractionsController < ApplicationController
       end
 
       format.html.desktop do
+        authenticate_admin!
         @fields = [
           :name,
           :address,
