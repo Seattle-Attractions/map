@@ -24,6 +24,7 @@ class MapsController < ApplicationController
           build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all
       end
+      format.html.phone
     end
   end
 
