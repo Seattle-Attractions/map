@@ -1,9 +1,18 @@
 class AttractionsController < ApplicationController
   before_action :detect_device
-  skip_before_action :authenticate_admin!, only: [:show]
+  before_action :authenticate_admin!
+  skip_before_action :authenticate_admin!, only: [:show, :index]
 
   def index
-    @attractions = Attraction.all
+    respond_to do |format|
+      format.html.phone do
+        @attractions = Attraction.all
+      end
+      format.html.desktop do
+        authenticate_admin!
+        @attractions = Attraction.all
+      end
+    end
   end
 
   def new

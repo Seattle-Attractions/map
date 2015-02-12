@@ -5,6 +5,7 @@ class MapsController < ApplicationController
   def map
     @device = 'others'
     respond_to do |format|
+      format.html.phone
       format.html.desktop do
         params[:location] ||= ''
         if params[:location] == ''
@@ -24,14 +25,13 @@ class MapsController < ApplicationController
           build_json_hash(@attractions + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all
       end
-      format.html.phone
     end
   end
 
   def nearby_mobile
     @device = 'others'
     respond_to do |format|
-      format.html.mobile do
+      format.html.phone do
         @markers_hash =
           build_json_hash(Attraction.all + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all

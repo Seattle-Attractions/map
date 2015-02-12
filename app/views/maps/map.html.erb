@@ -1,44 +1,56 @@
-<script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
-<script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
-</script>
+<% if request.variant.include? :phone %>
 
-  <div class="columns large-10 show-for-medium-up">
-    <div>
-      <div id="map" class="google-maps"></div>
+  <div class="small-12 small-home">
+    <%= link_to 'All Attractions', attractions_path %>
+    <hr>
+    <%= link_to 'Nearby Attractions', nearby_path %>
+  </div>
+
+<% elsif %>
+
+  <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
+  </script>
+
+    <div class="columns large-10 show-for-medium-up">
+      <div>
+        <div id="map" class="google-maps"></div>
+      </div>
     </div>
+
+    <div id="attraction_sidebar" class="columns large-2 show-for-medium-up">
+      <%= form_tag root_path, method: 'get' do %>
+        <%= select_tag('location', options_from_collection_for_select(@locations, :name, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
+        <%= submit_tag 'submit', id: 'submit_location' %>
+        <%= javascript_tag "$('#submit_location').hide()" %>
+      <% end %>
+      <%= render(
+        partial: 'attraction',
+        collection: @attractions,
+        spacer_template: "attraction_divider") ||
+        "Sorry, we don't have any attractions in this area right now." %>
+    </div>
+
   </div>
 
-  <div id="attraction_sidebar" class="columns large-2 show-for-medium-up">
-    <%= form_tag root_path, method: 'get' do %>
-      <%= select_tag('location', options_from_collection_for_select(@locations, :name, :name, params[:location]), prompt: 'All', onchange: 'this.form.submit()') %>
-      <%= submit_tag 'submit', id: 'submit_location' %>
-      <%= javascript_tag "$('#submit_location').hide()" %>
-    <% end %>
-    <%= render(
-      partial: 'attraction',
-      collection: @attractions,
-      spacer_template: "attraction_divider") ||
-      "Sorry, we don't have any attractions in this area right now." %>
-  </div>
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      var markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
+      bindAttrMarkerPairs(handler, markers);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(<%= @map_center[:zoom] %>);
+      handler.getMap().setCenter({
+        lat: <%= @map_center[:lat] %> ,
+        lng: <%= @map_center[:lng] %>
+      })
+    });
+  </script>
 
-</div>
+<% end %>
 
-<script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    var markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
-    bindAttrMarkerPairs(handler, markers);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(<%= @map_center[:zoom] %>);
-    handler.getMap().setCenter({
-      lat: <%= @map_center[:lat] %> ,
-      lng: <%= @map_center[:lng] %>
-    })
-  });
-</script>
-
- <div class="columns large-12" style="background-color: #ffffff">
+<div class="columns large-12" style="background-color: #ffffff">
   <h5><a href="http://www.seattleattractions.com/"> < Back to Seattle Attractions Website</a></h5>
 </div>
