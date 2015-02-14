@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+/*= require foundation */
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 2.4rem !important;
+}
+
+hr {
+  margin: .1em auto !important;
+  padding: .1em auto !important;
+}
+
+.columns{
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+
+.small-2 {
+  margin-left: 0px !important;
+}
+
+.attraction-sidebar {
+  padding-left: 5px !important;
+}
+
+.attraction-sidebar p {
+  margin: .1em !important;
+}
+
+.top-bar {
+  height: 100px !important;
+  line-height: 100px !important;
+  position: relative !important;
+  background: #000000 !important;
+  margin-bottom: 0 !important;
+}
+
+.left {
+  margin-top: 50px;
+  color: #ffffff !important;
+}
+
+.left h1 {
+  color: #ffffff !important;
+  font-size: 1.8rem !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+#map img {
+  max-width: none;
+  float: left;
+}
+
+#map ul {
+  list-style: none outside none;
+  text-align: center;
+  font-size: .8rem;
+  padding: 0px 0px 0px;
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+#map h3 {
+  font-size: .9rem;
+  text-align: center;
+}
+
+#map p {
+  font-size: .85rem;
+  font-weight: lighter;
+  padding: 0px 0px 0px;
+  line-height: 1.0rem;
+  margin-bottom: .75rem;
+}
+
+.gm-style-iw {
+   font-family: 'Open Sans';
+   text-align: center;
+   padding: 5px 0px 10px;
+   overflow: auto;
+   position: relative;
+}
+.map-info-window .map-info-close{
+   float:right;
+   cursor:pointer;
+   margin-right: -5px;
+   margin-left: 5px;
+}
+
+.map-info-window h5{
+   font-weight: bold;
+}
+.map-info-window p{
+   color: #939393;
+}
+
+.map-footer {
+  background-color: #ffffff
+}

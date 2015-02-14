@@ -1,5 +1,20 @@
 <br>
 
+<%=
+  link_to 'Edit',
+  public_send("edit_#{record.class.to_s.underscore}_path"),
+  remote: true
+%> |
+<%=
+  link_to 'Delete',
+  public_send("#{record.class.to_s.underscore}_path"),
+  method: :delete,
+  remote: true,
+  data: { confirm: "Are you sure?" }
+%>
+<br><br>
+
+
 <% fields.each do |field| %>
   <% if field.to_s.chars.last(3).join == '_id' %>
     <% base_name = field.to_s.chomp('_id') %>

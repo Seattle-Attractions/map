@@ -5,39 +5,40 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    respond_to { |format| format.js }
   end
 
   def show
     @fields = [:name, :address, :latitude, :longitude, :price, :phone, :website]
     @restaurant = Restaurant.find(params[:id])
+    respond_to { |format| format.js }
   end
 
   def edit
     @restaurant = Restaurant.find(params[:id])
+    respond_to { |format| format.js }
   end
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to @restaurant, notice: 'restaurant saved'
-    else
-      render :new
+      flash.now[:notice] = 'Parking lot saved'
     end
+    respond_to { |format| format.js }
   end
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
-    redirect_to restaurants_path, notice: 'restaurant destroyed'
+    respond_to { |format| format.js }
   end
 
   def update
     @restaurant = Restaurant.find(params[:id])
     if @restaurant.update(restaurant_params)
-      redirect_to @restaurant, notice: 'Article updated'
-    else
-      render :edit
+      flash.now[:notice] = 'Parking lot saved'
     end
+    respond_to { |format| format.js }
   end
 
   private
