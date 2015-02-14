@@ -1,26 +1,60 @@
 class AttractionsController < ApplicationController
+  before_action :detect_device
+  before_action :authenticate_admin!
+  skip_before_action :authenticate_admin!, only: [:show, :index]
+
   def index
-    @attractions = Attraction.all
+    respond_to do |format|
+      format.html.phone do
+        @attractions = Attraction.all
+      end
+      format.html.desktop do
+        authenticate_admin!
+        @attractions = Attraction.all
+      end
+    end
   end
 
   def show
-    @fields = [
-      :name,
-      :address,
-      :phone,
-      :location_id,
-      :description,
-      :latitude,
-      :longitude,
-      :website,
-      :icon,
-      :coupon_url
-    ]
-    @attraction = Attraction.find(params[:id])
-
+    @device = 'others'
     respond_to do |format|
-      format.html
-      format.js
+      format.html.phone do
+        @attraction = Attraction.find(params[:id])
+      end
+
+      format.html.desktop do
+        authenticate_admin!
+        @fields = [
+          :name,
+          :address,
+          :phone,
+          :location_id,
+          :description,
+          :latitude,
+          :longitude,
+          :website,
+          :icon,
+          :coupon_url
+        ]
+        @attraction = Attraction.find(params[:id])
+      end
+
+      format.js.desktop do
+        authenticate_admin!
+        @fields = [
+          :name,
+          :address,
+          :phone,
+          :location_id,
+          :description,
+          :latitude,
+          :longitude,
+          :website,
+          :icon,
+          :coupon_url
+        ]
+        @attraction = Attraction.find(params[:id])
+      end
     end
   end
 
@@ -96,4 +130,18 @@ class AttractionsController < ApplicationController
       :phone,
       :coupon_url)
   end
+
+  def detect_device
+    case request.user_agent
+    when /iPhone/i
+      request.variant = :phone
+    when /Android/i && /mobile/i
+      request.variant = :phone
+    when /Windows Phone/i
+      request.variant = :phone
+    else
+      request.variant = :desktop
+    end
+  end
+
 end

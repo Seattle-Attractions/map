@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :attractions
   get 'about' => 'static_pages#about', as: 'about'
+  get 'nearby' =>'maps#nearby_mobile', as: 'nearby'
 
   root 'maps#map'
 

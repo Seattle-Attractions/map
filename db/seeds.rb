@@ -21,7 +21,7 @@ Attraction.create!([
   {name: "Space Needle", address: "400 Broad St, Seattle, WA 98109",
     latitude: 47.6204, longitude: -122.3491, description: "The Space Needle is a
     big tower!", website: "http://www.spaceneedle.com", location_id:
-    locations[0].id, icon_url: "1.jpg", coupon_url:
+    locations[0].id, coupon_url:
     "http://www.seattleattractions.com/wp-content/uploads/2013/05/Space-Needle-01.pdf"},
   {name: "Public Market Tours", address: "1916 Pike Place,
     Suite 12-379 Seattle, WA 98101",
