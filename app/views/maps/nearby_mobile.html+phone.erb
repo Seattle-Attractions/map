@@ -16,7 +16,6 @@ $(function() {
     },
   function(){
       markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
-      bindAttrMarkerPairs(handler, markers);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(13);
