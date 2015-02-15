@@ -33,3 +33,9 @@ function bindAttrMarkerPairs(handler, markers) {
     initClickBind(handler, $attr, markers[i]);
   };
 };
+
+$(function closeAlertWindow() {
+  $('a.alert-box-close').on('click', function() {
+    $('div.alert-box').remove();
+  });
+});
