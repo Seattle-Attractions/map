@@ -1,7 +1,6 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'>
 </script>
-<script type="text/javascript"
-  src="//maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU">
+<script src='//maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU' type='text/javascript'>
 </script>
 
 <div id="mobile-show">
@@ -15,6 +14,7 @@
 <div id="mobile_show_map" style="width:90%; height:50%; padding:1em; margin: 0 auto;"></div>
 
 <script type="text/javascript">
+$(function () {
       handler = Gmaps.build('Google');
       handler.buildMap({ provider: {}, internal: {id: 'mobile_show_map'}},
       function(){
@@ -31,11 +31,7 @@
         handler.map.centerOn(markers[0]);
         handler.getMap().setZoom(14);
       });
-
-  $.getScript('/assets/application.js',function(){
-                $(document).ready(ready); //calls for the function we defined above (first loading)
-                $(document).on('page:load',ready); // the same but for the other loadings
-              });
+ });
 </script>
 
 
