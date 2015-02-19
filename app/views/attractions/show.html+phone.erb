@@ -31,6 +31,11 @@
         handler.map.centerOn(markers[0]);
         handler.getMap().setZoom(14);
       });
+
+  $.getScript('/assets/application.js',function(){
+                $(document).ready(ready); //calls for the function we defined above (first loading)
+                $(document).on('page:load',ready); // the same but for the other loadings
+              });
 </script>
 
 

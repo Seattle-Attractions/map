@@ -39,3 +39,10 @@ $(function closeAlertWindow() {
     $('div.alert-box').remove();
   });
 });
+
+ ready = function() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBYsbaTUCmS5U25KSWi21-C-Xgk5K7LwIU'+'callback=initialize';
+    document.body.appendChild(script);
+   };
