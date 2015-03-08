@@ -33,7 +33,7 @@ class MapsController < ApplicationController
     respond_to do |format|
       format.html.phone do
         @markers_hash =
-          build_json_hash(Attraction.all + ParkingLot.all + Restaurant.all).to_json
+          build_mobile_json_hash(Attraction.all + ParkingLot.all + Restaurant.all).to_json
         @locations = Location.all
       end
     end
@@ -66,11 +66,31 @@ class MapsController < ApplicationController
     end
   end
 
+  def build_mobile_json_hash(locations)
+    Gmaps4rails.build_markers(locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.json(id: location.id)
+      marker.picture('url' => ActionController::Base.helpers.asset_path(find_marker(location), type: :image),
+                     'width' =>  30,
+                     'height' => 30)
+      marker.infowindow render_to_string(partial: find_mobile_partial(location), locals: { location: location })
+    end
+  end
+
   def find_partial(location)
     case location.class.to_s
     when 'Attraction' then 'attractions/info_window'
     when 'ParkingLot' then 'parking_lots/info_window'
     when 'Restaurant' then 'restaurants/info_window'
+    end
+  end
+
+  def find_mobile_partial(location)
+    case location.class.to_s
+    when 'Attraction' then 'attractions/mobile_info_window'
+    when 'ParkingLot' then 'parking_lots/mobile_info_window'
+    when 'Restaurant' then 'restaurants/mobile_info_window'
     end
   end
 

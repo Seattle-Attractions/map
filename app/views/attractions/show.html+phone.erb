@@ -9,24 +9,24 @@
 <div id="mobile_show_map" style="width:90%; height:50%; padding:1em; margin: 0 auto;"></div>
 
 <script type="text/javascript">
-$(function () {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {}, internal: {id: 'mobile_show_map'}},
-      function(){
-        var markers = handler.addMarkers([
-          {"lat": <%= @attraction.latitude %>,
-           "lng": <%= @attraction.longitude %>,
-           "picture":
-           {"url": '<%= asset_path('attractionmarkersm.png') %>',
-            "width": 30,
-            "height": 30},
-           "infowindow": '<%= @attraction.name %> <%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>'
-          }
-        ]);
-        handler.map.centerOn(markers[0]);
-        handler.getMap().setZoom(14);
-      });
- });
+  $(function () {
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'mobile_show_map'}},
+    function(){
+      var markers = handler.addMarkers([
+        {"lat": <%= @attraction.latitude %>,
+         "lng": <%= @attraction.longitude %>,
+         "picture":
+         {"url": '<%= asset_path('attractionmarkersm.png') %>',
+          "width": 30,
+          "height": 30},
+         "infowindow": '<%= @attraction.name %> <%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>'
+        }
+      ]);
+      handler.map.centerOn(markers[0]);
+      handler.getMap().setZoom(14);
+    });
+  });
 </script>
 
 
