@@ -1,8 +1,18 @@
-<ul class="small-home no-bullet">
+
+<p>
+
+ <%= image_tag("seattlebrochure_small.png", :alt => "Seattle Premier Attractions Brochure", :class => "brochure") %>
+ Find hot deals and more information on Premier Attractions with this guide. <br><br><br><br>
+</p>
+
+<div class="small-home">
+<ul class="no-bullet">
   <% @attractions.each do |attraction| %>
     <li><%= link_to attraction.name, attraction %></li>
     <hr>
   <% end %>
   <%= link_to 'Nearby Attractions', nearby_path, 'data-no-turbolink' => true %>
 </ul>
+</div>
+
 <a href="http://www.seattleattractions.com/"> < Back to Seattle Attractions Website</a>
