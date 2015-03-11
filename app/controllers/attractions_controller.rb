@@ -6,11 +6,11 @@ class AttractionsController < ApplicationController
   def index
     respond_to do |format|
       format.html.phone do
-        @attractions = Attraction.all
+        @attractions = Attraction.order(name: :desc).all
       end
       format.html.desktop do
         authenticate_admin!
-        @attractions = Attraction.all
+        @attractions = Attraction.order(name: :desc).all
       end
     end
   end
@@ -95,7 +95,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
     respond_to do |format|
       if @attraction.update(attraction_params)
-        format.html { redirect_to @attraction, notice: 'Article updated' }
+        format.html { redirect_to attractions_path, notice: 'Article updated' }
         format.js { flash.now[:notice] = 'Article updated' }
       else
         format.html { render :edit }
