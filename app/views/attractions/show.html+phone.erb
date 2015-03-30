@@ -1,9 +1,10 @@
 <div id="mobile-show">
 <h1><%= @attraction.name %></h1>
-<p><%= @attraction.address %> (<%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %>)</p>
+<p><%= @attraction.description %></p>
+<p><%= @attraction.address %> </p>
+<p><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{@attraction.latitude},#{@attraction.longitude}", :target => "_blank") %></p>
 <p><%= number_to_phone(@attraction.phone, area_code: true) %></p>
 <p><%= link_to("Website", @attraction.website, :target => "_blank") %></p>
-<p><%= @attraction.description %></p>
 </div>
 
 <div id="mobile_show_map" style="width:90%; height:50%; padding:1em; margin: 0 auto;"></div>
