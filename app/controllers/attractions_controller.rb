@@ -72,7 +72,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.new(attraction_params)
     respond_to do |format|
       if @attraction.save
-        format.html { redirect_to @attraction, notice: 'Attraction saved' }
+        format.html { redirect_to attractions_path, notice: 'Attraction saved' }
         format.js { flash.now[:notice] = 'Attraction saved' }
       else
         format.html { render :new }
