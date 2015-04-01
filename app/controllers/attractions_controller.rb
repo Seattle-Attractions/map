@@ -45,7 +45,6 @@ class AttractionsController < ApplicationController
           :name,
           :address,
           :phone,
-          :location_id,
           :description,
           :latitude,
           :longitude,
