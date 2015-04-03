@@ -8,7 +8,9 @@
     <li><%= link_to("Get Directions", "https://www.google.com/maps/dir/Current+Location/#{location.latitude},#{location.longitude}", :target => "_blank") %></li>
   </ul>
   <p class="text-left"><%= location.description %> </p>
-  <%= link_to_if(location.coupon_url?, "Print Coupon", location.coupon_url, class: "button radius button right") %>
+  <% unless location.coupon_url.empty? %>
+    <%= link_to("Print Coupon", location.coupon_url, class: "button radius button right") %>
+  <% end %>
 
 
 </div>
