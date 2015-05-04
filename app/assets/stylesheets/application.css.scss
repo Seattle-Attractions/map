@@ -66,13 +66,13 @@
   padding-left: 1em;
 }
 
-.infowindow ul, no-bullet, li {
-  background-color: #ffffff;
-  padding: 0px;
-}
-
 .infowindow ul {
   display: inline-block;
+}
+
+.infowindow li {
+  background-color: #ffffff;
+  padding: 0px;
 }
 
 .infowindow p {
