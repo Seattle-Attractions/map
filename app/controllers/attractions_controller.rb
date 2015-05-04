@@ -6,11 +6,11 @@ class AttractionsController < ApplicationController
   def index
     respond_to do |format|
       format.html.phone do
-        @attractions = Attraction.order(name: :desc).all
+        @attractions = Attraction.alphabetize.all
       end
       format.html.desktop do
         authenticate_admin!
-        @attractions = Attraction.order(name: :desc).all
+        @attractions = Attraction.alphabetize.all
       end
     end
   end

@@ -27,7 +27,11 @@
 }
 
 .top-bar {
-  height: 100px;
+  height: 120px;
+}
+
+.top-bar .name {
+  background-color: #000000;
 }
 
 .brochure {
@@ -38,16 +42,24 @@
 
 .small-home {
   background-color: #333333;
-  padding: 10px 0px;
 }
 
 .small-home a {
+  background-color: #333333;
+}
+
+.small-home ul, li {
   background-color: #333333;
   padding: 10px;
 }
 
 .small-home hr {
   border-top: 2px solid #ffffff;
+  padding: 0px;
+}
+
+.mobile-paragraph {
+  padding: 10px;
 }
 
 #mobile-show {
@@ -69,6 +81,7 @@
 #map img {
   max-width: none;
 }
+
 #map label {
   width: auto; display:inline;
 }
@@ -76,6 +89,13 @@
 #mobile_show_map img {
   max-width: none;
 }
+
 #mobile_show_map label {
   width: auto; display:inline;
 }
+
+@viewport{
+    zoom: 1.0;
+    width: device-width;
+}
+

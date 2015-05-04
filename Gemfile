@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.2.0'
 
 gem 'rails', '4.1.6'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'eefgilm'
@@ -37,7 +37,7 @@ group :development do
   gem 'rubocop'
   gem 'seed_dump'
   gem 'spring'
-  gem 'libnotify'
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
 end
 
 group :test do

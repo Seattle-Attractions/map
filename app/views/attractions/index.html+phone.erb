@@ -1,8 +1,9 @@
-
+<div class="mobile-paragraph">
 <p>
  <%= image_tag("seattlebrochure_small.png", :alt => "Seattle Premier Attractions Brochure", :class => "brochure") %>
  <br>Pick up this guide for coupons, maps and more information on Premier Attractions.
 </p><br>
+</div>
 
 <div class="small-home">
 <ul class="no-bullet">
@@ -10,7 +11,7 @@
     <li><%= link_to attraction.name, attraction %></li>
     <hr>
   <% end %>
-  <%= link_to 'Nearby Attractions', nearby_path, 'data-no-turbolink' => true %>
+  <li><%= link_to 'Nearby Attractions', nearby_path, 'data-no-turbolink' => true %></li>
 </ul>
 </div>
 
