@@ -37,7 +37,7 @@ group :development do
   gem 'rubocop'
   gem 'seed_dump'
   gem 'spring'
-  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'libnotify'
 end
 
 group :test do
