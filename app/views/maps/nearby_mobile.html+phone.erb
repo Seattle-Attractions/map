@@ -1,6 +1,6 @@
 <div id="map" class="google-maps" style="height:75%">
 <script type="text/javascript">
-$(function() {
+  $(function() {
   handler = Gmaps.build('Google');
   handler.buildMap({
     provider: {
@@ -11,12 +11,21 @@ $(function() {
       id: 'map'}
     },
   function(){
-      markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(13);
-      })
+    markers = handler.addMarkers(<%= raw @markers_hash %>, {draggable: false});
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(13);
+    if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
     });
+  });
+  function displayOnMap(position){
+    var marker = handler.addMarker({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    });
+  handler.map.centerOn(marker);
+  }
 </script>
 <a href="http://www.seattleattractions.com/"> < Back to Seattle Attractions Website</a>
 </div>
